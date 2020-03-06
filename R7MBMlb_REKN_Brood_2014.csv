@@ -1,0 +1,60 @@
+Year,BroodID,Visit,Date,Time,PlotID,Latitude,Longitude,Stage,HatchDate,AgeType,ChickAge,NumberChicks,Observer,ChickAgeEst,Adult1FlagCode,Adult1FlagColor,Adult2FlagCode,Adult2FlagColor,Comments
+2014,6HJ,1,6/29/2014,17:10,34 MI,,,unk,,,,,All,,6HJ,FELG,,, 
+2014,6HJ,2,7/1/2014,12:00,34 MI,,,unk,,,,,JAJ,,6HJ,FELG,,,HJ called at my approach. T'was raining so I didn't pursue status or # chicks. 
+2014,6HJ,3,7/3/2014,16:20,34 MI,64.81361,-165.93892,brood,,,,1,NRH,8+ d.o.,6HJ,FELG,,,Observed with one 8+ d.o. chick 
+2014,6HN,1,7/5/2014,18:35,Barrel,64.71037,-165.76273,brood,,,,2,LHD,16-18 d.o.,6HN,FELG,,," found, captured male, flagged chicks"
+2014,6HX,1,6/25/2014,,Tombstone,,,brood,,,,4,NRH,1 d.o.,6HX,FELG,,," captured male, geo removed"
+2014,6HX,2,7/4/2014,,Tombstone,,,brood,,,,3,All,,6HX,FELG,,, 
+2014,6HX,3,7/5/2014,15:10,Tombstone,64.93752,-166.20981,brood,,,,3,LHD,,6HX,FELG,,, captured and bled male. Flagged chicks.
+2014,6JY,1,7/3/2014,18:40,37 MI,64.85294,-166.08643,brood,,,,1,LHD,10 d.o.,6JY,FELG,,, captured male and flagged chick
+2014,6KP,1,6/29/2014,17:10,34 MI,64.81217,-165.96416,brood,,,,4,All,3 d.o.,6KP,FELG,,," found, male captured and sampled"
+2014,6KP,2,7/3/2014,11:30,34 MI,64.81335,-165.96806,unk,,,,,JAJ,,6KP,FELG,,,"No chicks observed with KP, HJ observed with 1 chick approximately same age as what KP's would have been. "
+2014,6LX,1,6/27/2014,17:35,34 MI,,,brood,,,,4,NRH,2 d.o.,6LX,FELG,,, 
+2014,6LX,2,7/3/2014,19:05,34 MI,64.82397,-166.03619,brood,,,,4,NRH,,6LX,FELG,,, 
+2014,6LX,3,7/6/2014,21:20,34 MI,64.82528,-166.03293,brood,,,,4,All,,6LX,FELG,,, 
+2014,6TE,1,6/23/2014,16:30,37 MI,64.85235,-166.07938,brood,,,,1,All,6 d.o.,6TE,FELG,,, found but unable to capture male
+2014,6TM,1,7/4/2014,13:27,37 MI,,,brood,,,,1,JAJ,5 d.o.,6TM,FELG,,, found
+2014,6TM,2,7/5/2014,13:05,37 MI,64.84499,-166.0847,brood,,,,1,LHD,6-7 d.o.,6TM,FELG,,, captured male
+2014,6TY,1,7/6/2014,14:55,Knob,64.59017,-165.55028,brood,,,,4,LD,18+ d.o.,6TY,FELG,,," found, captured male and one chick"
+2014,6UN,1,6/25/2014,,34 MI,,,brood,,,,4,NRH,2 d.o.,6UN,FELG,,, found no capture
+2014,6UN,2,6/26/2014,16:50,34 MI,64.82214,-166.0383,brood,,,,4,NRH,3 d.o.,6UN,FELG,,, captured male
+2014,6UN,3,7/3/2014,13:15,34 MI,64.82213,-166.05199,brood,,,,2,LHD,,6UN,FELG,,, nothing
+2014,6UP,1,6/26/2014,12:48,37 MI,64.84675,-166.08537,brood,,,,1,NRH,4 d.o.,6UP,FELG,,," captured male, nothing done to chicks"
+2014,6UU,1,6/20/2014,10:50,34 MI,unk.,unk.,hatch,,,,2,LHD,1 d. o.,6UU,FELG,,, chicks seen at nest site
+2014,6UU,2,6/21/2014,12:00,34 MI,64.81957,-166.03745,brood,,,,2,LHD,2 d. o.,6UU,FELG,,,"chicks measured, see LHD notebook, 2 d.o. captured all, male samnpled"
+2014,6UU,3,6/24/2014,14:47,34 MI,64.82165,-166.0369,brood,,,,2,NRH,,6UU,FELG,,, .
+2014,6UU,4,6/25/2014,,34 MI,,,brood,,,,2,LHD,,6UU,FELG,,, chicks measured for growth
+2014,6UU,5,6/28/2014,20:05,34 MI,,,brood,,,,2,LHD,,6UU,FELG,,, saw while looking for 6UM
+2014,6UU,6,7/3/2014,12:10,34 MI,64.8245,-166.04236,brood,,,,2,LHD,,6UU,FELG,,, Flagged chicks
+2014,6UU,7,7/6/2014,20:50,34 MI,,,brood,,,,2,LHD,almost fly,6UU,FELG,,, Measured chicks
+2014,6UV,1,6/26/2014,18:16,Barrel,,,brood,,,,4,NRH,,6UV,FELG,,," found, no capture attempt made"
+2014,6UV,2,6/27/2014,12:55,Barrel,64.70811,-165.7685,brood,,,,4,NRH,4 d.o.,6UV,FELG,,," Captured male, sampled. Nothing with chicks."
+2014,6UV,3,7/5/2014,20:35,Barrel,64.71265,-165.76414,brood,,,,1,LHD,12 d.o.,6UV,FELG,,, Flagged chick
+2014,6UX,1,6/27/2014,12:55,Barrel,64.74112,-165.76138,brood,,,,4,NRH,4 d.o.,6UX,FELG,,," captured male, sampled; nothing done to chicks"
+2014,6UY,1,6/29/2014,15:37,34 MI,64.81779,-166.00644,brood,,,,3,All,2 d.o.,6UY,FELG,,," found, captured and sampled male"
+2014,6UY,2,7/3/2014,10:47,34 MI,64.82038,-166.01735,brood,,,,3,NRH,,6UY,FELG,,, 
+2014,6VA,1,6/29/2014,18:50,34 MI,64.81367,-165.95503,brood,,,,4,All,5 d.o.,6VA,FELG,,," found, male captured"
+2014,6VA,2,7/3/2014,15:00,34 MI,64.81468,-165.94759,brood,,,,2,JAJ,,6VA,FELG,,, 
+2014,6VC,1,6/30/2014,12:40,Feather West,64.84409,-165.95508,brood,,,,3,All,4 d.o.,6VC,FELG,,," found, male captured"
+2014,6VE,1,6/30/2014,14:55,Feather West,64.85101,-165.93948,brood,,,,2,All,5 and 8 d.o.,6VE,FELG,,," found, male captured"
+2014,6VE,2,7/5/2014,13:12,Feather West,64.8485,-165.94846,brood,,,,2,JAJ,,6VE,FELG,,, flagged chicks
+2014,6VK,1,6/30/2014,17:45,Feather East,64.84398,-165.91074,brood,,,,2,All,6 d.o.,6VK,FELG,,," found, male captured"
+2014,6VK,2,7/5/2014,14:33,Feather East,64.8485,-165.94844,brood,,,,1,JAJ,,6VK,FELG,,, flagged chick
+2014,6VL,1,6/30/2014,18:30,Feather East,64.84377,-165.91496,brood,,,,3,All,4 d.o.,6VL,FELG,,," found, male captured"
+2014,6VL,2,7/5/2014,19:33,Feather East,64.84048,-165.91093,brood,,,,1,JAJ,,6VL,FELG,,, uncertain on total number of chicks
+2014,6VM,1,6/30/2014,19:25,Feather East,64.83862,-165.92075,brood,,,,1,All,10 d.o.,6VM,FELG,,," found, male captured and sampled, chick flagged and swabbed"
+2014,6VV,1,7/5/2014,18:45,Feather East,64.84362,-165.91176,brood,,,,2,JAJ,5-6 d.o.,6VV,FELG,,," found, captured male"
+2014,6XJ,1,7/3/2014,10:40,34 MI,64.82011,-166.03453,brood,,,,3,LHD,,6XJ,FELG,,, 
+2014,6XJ,2,7/6/2014,20:00,34 MI,,,brood,,,,3,JAJ,,6XJ,FELG,,,Location ca. 20m south of camp. 
+2014,6XJ ,1,6/21/2014,14:14,34 MI,64.82011,-166.03358,brood,,,,4,LHD,2 d.o.,6XJ ,FELG,,," male captured and banded, chicks not banded, poor bleed, need to resample"
+2014,6XM,1,6/22/2014,17:00,34 MI,64.82167,-166.03873,brood,,,,3,LHD,5 d.o.,6XM,FELG,,," found, male banded and sampled"
+2014,6XM,2,6/24/2014,14:18,34 MI,64.82372,-166.03729,brood,,,,,NRH,,6XM,FELG,,,"No chicks observed, reacted heavily to chick call with rodent run distraction displays and posturing to brood. Really freaking out as other have when their broods were lost. ."
+2014,6XM,3,7/3/2014,12:10,34 MI,64.8245,-166.04236,brood,,,,,LHD,,6XM,FELG,,,"Again excessively responsive, no chicks observed though, pretty sure they failed. "
+2014,6XM,4,7/6/2014,19:55,34 MI,64.82462,-166.04282,brood,,,,3,LHD,flying!!,6XM,FELG,,, Flagged chicks
+2014,6XN,1,6/23/2014,15:05,37 MI,64.84716,-166.08542,brood,,,,4,LHD,4 d.o.,6XN,FELG,,, .
+2014,6XN,2,6/26/2014,11:18,37 MI,64.84692,-166.09352,brood,,,,5,NRH,7 d.o.,6XN,FELG,,,"Five chicks associated with 6XN, obviously one chick from some one else, assumed. Anded chicks (metal + cohort) and swabbed all chicks banded chicks, AI swabs on chicks"
+2014,6XN,3,7/3/2014,16:25,37 MI,64.85098,-166.08269,brood,,,,5,LHD,,6XN,FELG,,, Flagged chicks
+2014,6XN,4,7/4/2014,14:10,37 MI,64.85033,-166.08635,brood,,,,5,NRH,,6XN,FELG,,, Resight
+2014,6XP,1,6/23/2014,16:50,37 MI,64.85304,-166.0782,brood,,,,2,NRH,"3 d.o., and 6 d.o.",6XP,FELG,,," found with two chicks of different ages, odler one matched ina ge to 6TE's chick, also found within 100m of 6TE --- assumed some chick interchange going on…"
+2014,6XP,2,6/26/2014,13:44,37 MI,64.85323,-166.082,brood,,,,2,NRH,"6 d.o., and 10 d.o.",6XP,FELG,,, 
+2014,6XT,1,7/3/2014,15:45,37 MI,64.84935,-166.0938,brood,,,,1,LHD,12 d.o.,6XT,FELG,,, captured both male and chick

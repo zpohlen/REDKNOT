@@ -1,0 +1,86 @@
+Year,BroodID,Visit,Date,Time,PlotID,Latitude,Longitude,Stage,HatchDate,AgeType,ChickAge,NumberChicks,Observer,ChickAgeEst,Adult1FlagCode,Adult1FlagColor,Adult2FlagCode,Adult2FlagColor,Comments
+2016,1CU,1,6/30/2016,19:30,Feather,64.84698,-165.94604,brood,,,,2,LHD,,1CU,FEDG,,,"chicks: 1JL (164.6900), 1JM "
+2016,1CU,2,7/3/2016,18:49,Feather,64.84882,-165.94206,brood,,,,,LHD,,1CU,FEDG,,, 
+2016,1CU,3,7/8/2016,,Feather,,,brood,,,,2,LHD,,1CU,FEDG,,, 
+2016,1EV,1,6/26/2016,14:00,37 MI,64.85152,-166.09987,hatch,6/26/2016,Known,0,1,CWW,1 d.o.,1EV,FEDG,,,Nest ID: SGB-001switched to book 2 
+2016,1EV,2,6/27/2016,20:30,37 MI,64.84935,-166.09938,brood,6/26/2016,Known,1,,LHD,2 d.o.,1EV,FEDG,,, 
+2016,1EV,3,6/29/2016,15:00,37 MI,64.84695,-166.11171,brood,6/26/2016,Known,3,,JVG,,1EV,FEDG,,, 
+2016,1EV,4,7/1/2016,15:00,37 MI,64.85053,-166.11252,brood,6/26/2016,Known,5,2,SGB,,1EV,FEDG,,, 
+2016,1EV,5,7/5/2016,15:00,37 MI,s of raod but farther w than first,,brood,6/26/2016,Known,9,,JVG,,1EV,FEDG,,, 
+2016,1EV,6,7/6/2016,11:30,37 MI,see resightings,,brood,6/26/2016,Known,10,2,JVG,,1EV,FEDG,,, 
+2016,1EV,7,7/10/2016,18:30,37 MI,64.8559,-166.11172,brood,6/26/2016,Known,14,2,JVG,,1EV,FEDG,,, 
+2016,1EV,8,7/13/2016,17:02,37 MI,64.854444,-166.11714,brood,6/26/2016,Known,17,2,all,,1EV,FEDG,,, 
+2016,1EV,9,7/18/2016,16:05,37 MI,64.85583,-166.11882,fledged,6/26/2016,Known,22,2,all,,1EV,FEDG,,, 
+2016,1HC,1,6/25/2016,21:50,34 MI,64.82443,-166.03893,brood,,,,4,all,1 d.o.,1HC,FEDG,,,"Nest ID: NSHG-01 captured male, measured/sampled chicks"
+2016,1HC,2,6/28/2016,13:40,34 MI,64.82156,-166.04991,brood,,,,1,all,4 d.o.,1HC,FEDG,,,"searched fro chick July 2, none found measured chick"
+2016,1HJ,1,6/20/2016,12:15,34 MI,64.81501,-165.95634,hatch,6/20/2016,Known,0,1,JVG,1 d.o.,1HJ,FEDG,,, checked nest
+2016,1HJ,2,6/20/2016,19:00,34 MI,64.81501,-165.95634,hatch,6/20/2016,Known,0,2,JVG,1 d.o.,1HJ,FEDG,,,Nest ID: NRH02 measured chick
+2016,1HJ,3,6/21/2016,20:30,34 MI,64.81207,-165.95708,brood,6/20/2016,Known,1,3,BJH,2 d.o.,1HJ,FEDG,,,radio on male 1HJ: 164.5920 measured chicks
+2016,1HJ,4,6/25/2016,17:52,34 MI,64.81191,-165.93773,brood,6/20/2016,Known,5,3,JVG,,1HJ,FEDG,,, measured chicks
+2016,1HJ,5,6/28/2016,16:40,34 MI,64.81631,-165.94754,brood,6/20/2016,Known,8,3,JVG,9 d.o.,1HJ,FEDG,,,"found w/3 chicks, one chick from 1HL based on AL band, 1 chick presumably died measured and banded chicks"
+2016,1HJ,6,6/29/2016,15:56,34 MI,64.82534,-165.94948,brood,6/20/2016,Known,9,1,LHD,,1HJ,FEDG,,, located chick
+2016,1HJ,7,7/2/2016,12:45,34 MI,64.81123,-165.94968,brood,6/20/2016,Known,12,1,BWR,,1HJ,FEDG,,, measured chick
+2016,1HJ,8,7/6/2016,15:00,34 MI,64.81389,-165.93022,brood,6/20/2016,Known,16,1,LHD,,1HJ,FEDG,,, measured chick
+2016,1HJ,9,7/12/2016,13:40,34 MI,64.81453,-165.92743,fledged,6/20/2016,Known,22,1,JVG,,1HJ,FEDG,,," pinpoint male, measured chick"
+2016,1HL,1,6/25/2016,19:10,34 MI,64.81239,-165.94696,brood,,,,1,LCW,6 d.o ?,1HL,FEDG,,,banded female based on morphology measured chick
+2016,1HL,2,6/26/2016,17:00,34 MI,64.81035,-165.94844,brood,,,,1,JVG,7-9 d.o. ?,1HL,FEDG,,,"adult captured on 1 chick, radio and pinpoint deployed, female based on morphology captured adult"
+2016,1HL,3,6/28/2016,16:00,34 MI,64.81196,-165.9449,unk,,,,,JVG,,1HL,FEDG,,,"chick switched to 1HJ, 1HL still nearby and responsive, chick not seen again searched fro chicks"
+2016,1HN,1,7/10/2016,14:30,37 MI,64.84943,-166.08519,brood,7/3/2016,Known,7,1,SGB,,1HN,FEDG,,,Radio: 164.6320 
+2016,1HN,2,7/13/2016,16:18,37 MI,no location,,brood,7/3/2016,Known,10,1,JVG,,1HN,FEDG,,, 
+2016,1HN,3,7/18/2016,17:39,37 MI,64.84561,-166.08553,brood,7/3/2016,Known,15,1,LHD,,1HN,FEDG,,, 
+2016,1HN,4,7/20/2016,18:00,37 MI,64.84187,-166.0811,brood,7/3/2016,Known,17,1,LHD,,1HN,FEDG,,, 
+2016,1JP,1,7/8/2016,,Feather Steven,,,brood,,,,,BWR,,1JP,FEDG,,, 
+2016,1JP,2,7/10/2016,14:00,Feather Steven,64.84814,-166.01628,brood,,,,3,BWR,25 d.o.,1JP,FEDG,,, 
+2016,1JU,1,7/8/2016,,Feather Steven,,,brood,,,,,LHD,,1JU,FEDG,,, 
+2016,1JU,2,7/10/2016,15:40,Feather Steven,64.84662,-166.0285,brood,,,,2,LHD,15 d.o.,1JU,FEDG,,, 
+2016,6HE,1,6/30/2016,18:00,Feather,64.84834,-165.94289,brood,,,,1,LHD,12 d.o.,6HE,FELG,,,"Chick: 1JN, radio: 164.7520 "
+2016,6HE,2,7/3/2016,19:28,Feather,,,brood,,,,,LHD,,6HE,FELG,,, 
+2016,6HE,3,7/8/2016,,Feather,,,brood,,,,1,LHD,,6HE,FELG,,, 
+2016,6HX,1,6/24/2016,12:50,Tombstone,64.94669,-166.2059,brood,,,,4,LHD,8-10 d.o.,6HX,FELG,,, pp adult
+2016,6HX,2,6/27/2016,,Tombstone,,,brood,,,,,,,6HX,FELG,,, 
+2016,6HX,3,7/2/2016,14:00,Tombstone,,,brood,,,,2,LHD,flying,6HX,FELG,,, pp adult
+2016,6HX,4,7/3/2016,15:30,Tombstone,near end,,brood,,,,,BJH,,6HX,FELG,,, 
+2016,6HX,5,7/5/2016,12:00,Tombstone,similar location,,brood,,,,3,BWR,flying,6HX,FELG,,, 
+2016,6HX,6,7/6/2016,,Tombstone,,,brood,,,,3,all,flying,6HX,FELG,,, 
+2016,6HX,7,7/8/2016,14:30,Tombstone,similar location,,brood,,,,1,JVG,,6HX,FELG,,, 
+2016,6HX,8,7/12/2016,22:00,Tombstone,64.93244,-166.21127,brood,,,,3,all,,6HX,FELG,,, 
+2016,6HX,9,7/18/2016,,Tombstone,,,brood,,,,1,LHD,,6HX,FELG,,, 
+2016,6HY,1,6/27/2016,15:40,Tombstone,64.93257,-166.20581,brood,,,,3,all,3 d.o.,6HY,FELG,,, 
+2016,6HY,2,7/2/2016,14:00,Tombstone,same,,brood,,,,,LHD,,6HY,FELG,,, 
+2016,6HY,3,7/3/2016,15:10,Tombstone,same,,brood,,,,1,BJH,,6HY,FELG,,, 
+2016,6HY,4,7/6/2016,,Tombstone,same,,brood,,,,1,all,,6HY,FELG,,, 
+2016,6HY,5,7/8/2016,,Tombstone,,,brood,,,,,,,6HY,FELG,,, 
+2016,6HY,6,7/12/2016,19:30,Tombstone,64.94953,-166.20663,brood,,,,1,all,,6HY,FELG,,, 
+2016,6JY,1,6/26/2016,13:25,37 MI,64.8526,-166.09203,brood,6/25/2016,Known,1,4,CWW,1 d.o.,6JY,FELG,1EU,FEDG, 
+2016,6JY,2,6/28/2016,,37 MI,,,brood,6/25/2016,Known,3,,,,6JY,FELG,1EU,FEDG, 
+2016,6JY,3,6/29/2016,,37 MI,,,brood,6/25/2016,Known,4,,,,6JY,FELG,1EU,FEDG, 
+2016,6JY,4,7/1/2016,17:35,37 MI,64.85452,-166.07332,brood,6/25/2016,Known,6,3,SGB,,6JY,FELG,1EU,FEDG, 
+2016,6JY,5,7/2/2016,14:49,37 MI,64.856,-166.07259,brood,6/25/2016,Known,7,1,SGB,,6JY,FELG,1EU,FEDG, 
+2016,6JY,6,7/5/2016,12:30,37 MI,64.85837,-166.07056,brood,6/25/2016,Known,10,2,JVG,,6JY,FELG,1EU,FEDG, 
+2016,6JY,7,7/10/2016,17:05,37 MI,64.86388,-166.06633,brood,6/25/2016,Known,15,1,JVG,,6JY,FELG,1EU,FEDG, 
+2016,6JY,8,7/13/2016,16:18,37 MI,64.85053,-166.08061,brood,6/25/2016,Known,18,1,SGB,not flying,6JY,FELG,1EU,FEDG, 
+2016,6JY,9,7/18/2016,18:50,37 MI,64.84888,-166.08411,fledged,6/25/2016,Known,23,1,SGB,flying,6JY,FELG,1EU,FEDG, 
+2016,6KT,1,6/27/2016,16:15,Tombstone,64.93387,-166.20946,brood,,,,2,all,6 d.o.,6KT,FELG,,, 
+2016,6KT,2,7/2/2016,14:30,Tombstone,64.93476,-166.21001,brood,,,,2,LHD,,6KT,FELG,,, 
+2016,6KT,3,7/3/2016,15:30,Tombstone,64.93214,-166.20534,brood,,,,2,JVG,,6KT,FELG,,, 
+2016,6KT,4,7/6/2016,,Tombstone,,,brood,,,,2,all,,6KT,FELG,,, 
+2016,6KT,5,7/8/2016,12:15,Tombstone,64.932,-166.20888,brood,,,,2,JVG,,6KT,FELG,,, 
+2016,6KT,6,7/12/2016,11:20,Tombstone,64.9327,-166.20523,brood,,,,2,JAJ,,6KT,FELG,,, 
+2016,6TM,1,6/19/2016,20:00,37 MI,64.84142,-166.08118,brood,,,,1,JVG,2 d.o.,6TM,FELG,,, measured chick
+2016,6TM,2,6/21/2016,20:15,37 MI,64.84344,-166.08554,brood,,,,1,CWW,4 d.o,6TM,FELG,,, measured chick
+2016,6TM,3,6/24/2016,18:40,37 MI,64.84333,-166.082,brood,,,,1,CWW,,6TM,FELG,,," measured chick, captured adult"
+2016,6TM,4,6/27/2016,21:10,37 MI,64.83781,-166.08521,brood,,,,1,CWW,,6TM,FELG,,,not detected again measured chick
+2016,6UU,1,6/15/2016,16:00,34 MI,64.82209,-166.03999,brood,6/14/2016,Known,1,4,JVG,2 d.o.,6UU,FELG,,,"Nest: 1HE, Chick: 1JJ measured chicks"
+2016,6UU,2,6/20/2016,17:00,34 MI,64.82172,-166.0336,brood,6/14/2016,Known,6,3,JVG,6 d.o.,6UU,FELG,,,nest ID: 1HE measured chicks
+2016,6UU,3,6/22/2016,12:48,34 MI,64.82202,-166.04399,brood,6/14/2016,Known,8,3,JVG,8 d.o.,6UU,FELG,,,nest ID: 1HE measured chicks
+2016,6UU,4,6/23/2016,,34 MI,,,brood,6/14/2016,Known,9,,JVG,,6UU,FELG,,, 
+2016,6UU,5,6/25/2016,12:35,34 MI,64.82285,-166.04514,brood,6/14/2016,Known,11,2,JVG,,6UU,FELG,,,nest ID: 1HE measured chicks
+2016,6UU,6,6/28/2016,12:45,34 MI,64.82397,-166.041,brood,6/14/2016,Known,14,1,JVG,15 d.o.,6UU,FELG,,,"nest ID: 1HE, found w/1HK measured chick"
+2016,6UU,7,7/2/2016,18:00,34 MI,64.81937,-166.01305,brood,6/14/2016,Known,18,1,LHD,,6UU,FELG,,,"nest ID: 1HE, 1JJ took 1HE radio measured/radio chick"
+2016,6UU,8,7/6/2016,12:00,34 MI,64.81805,-166.00218,fledged,6/14/2016,Known,22,1,LHD,,6UU,FELG,,,"nest ID: 1HE, male 1HE near chick ignored observers, would have been difficult to capture measure chick 1JJ"
+2016,6UU,9,7/10/2016,20:20,34 MI,64.8189,-166.0416,fledged,6/14/2016,Known,26,1,JAJ,,6UU,FELG,,,nest ID: 1HE located chick
+2016,6UU,10,7/12/2016,,34 MI,,,fledged,6/14/2016,Known,28,1,LHD,,6UU,FELG,,, captured 1JJ
+2016,6UX,1,6/25/2016,14:22,Barrel,64.708,-165.76427,brood,,,,4,LHD,2 d.o.,6UX,FELG,,, 
+2016,6UX,2,7/13/2016,11:30,Barrel,,,unk,,,,,JVG,,6UX,FELG,,, 
+2016,6VK/1JK,1,6/30/2016,14:50,Feather,64.84468,-165.90834,brood,,,,2,LHD,12-14 d.o.,6VK/1JK,FELG,,,flag changed to 1JK on July 8 
+2016,6VK/1JK,2,7/8/2016,,Feather,,,brood,,,,2,LHD,flying,6VK/1JK,FELG,,, 

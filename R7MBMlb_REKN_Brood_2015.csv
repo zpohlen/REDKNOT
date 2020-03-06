@@ -1,0 +1,100 @@
+Year,BroodID,Visit,Date,Time,PlotID,Latitude,Longitude,Stage,HatchDate,AgeType,ChickAge,NumberChicks,Observer,ChickAgeEst,Adult1FlagCode,Adult1FlagColor,Adult2FlagCode,Adult2FlagColor,Comments
+2015,1AH,1,6/23/2015,11:45,34 MI,64.8197,-166.00673,brood,,,,4,LHD,4 d.o.,1AH,FEDG,,,"1AH Radio: 164.003 MHz. Chicks: 1CN, 1CP, 1CM, 1CL "
+2015,1AH,2,6/26/2015,17:12,34 MI,64.81649,-166.00835,brood,,,,4,LHD,ca. 7 d.o.,1AH,FEDG,,, 
+2015,1AH,3,6/27/2015,15:30,34 MI,64.81738,-166.00865,brood,,,,4,NRH,8 d.o.,1AH,FEDG,,,Radio on male @ 165.003 MHz. 
+2015,1AH,4,6/28/2015,16:53,34 MI,64.81848,-165.99741,brood,,,,4,NRH,,1AH,FEDG,,, 
+2015,1AH,5,6/29/2015,13:15,34 MI,64.81621,-166.01079,brood,,,,4,NRH,10 d.o. ?,1AH,FEDG,,,"Chicks seem younger than 10 d.o. Maybe -1, -2 d. Flushed 2 chicks, very tough in fog. "
+2015,1AH,6,6/30/2015,20:45,34 MI,64.81552,-166.0127,brood,,,,4,JAJ,,1AH,FEDG,,, 
+2015,1AH,7,7/2/2015,20:45,34 MI,64.81711,-166.01271,brood,,,,4,JAJ,,1AH,FEDG,,, 
+2015,1AH,8,7/4/2015,15:18,34 MI,64.81468,-166.99033,brood,,,,4,NRH,,1AH,FEDG,,, 
+2015,1AH,9,7/5/2015,17:51,34 MI,64.81595,-165.99619,brood,,,,4,NRH,,1AH,FEDG,,,"Recapture to deploy pinpoint but decided to re-apply radio instead due to loose patch and elbow abbrassions, chicks flagged. "
+2015,1AH,10,7/6/2015,19:52,34 MI,64.81615,-166.00459,brood,,,,,LHD,,1AH,FEDG,,, 
+2015,1AH,11,7/7/2015,14:20,34 MI,64.81617,-166.01718,brood,,,,3,NRH,,1AH,FEDG,,,1CM Radio: D647 
+2015,1AU,1,6/24/2015,13:00,37 MI,64.84861,-166.08821,brood,,,,1,LHD,9 d.o.,1AU,FEDG,,,"1AU PinPoint: 046. Chicks: 1CA, 1AY, 1AV, 1AX. 1AV Radio: D643 @ 164.345 (leather). 1AX Radio: D652 @ 165.213 (best .2125; switched from 1CA). 1CA: Radio shed. Not heard on radio on 8 July. "
+2015,1AU,2,7/3/2015,18:34,37 MI,64.84522,-166.0833,brood,,,,4,,,1AU,FEDG,,,"PinPoint 046 on male. Radio D652 on chick 1CA @ 165.213, best 165.2125. "
+2015,1AU,3,7/4/2015,10:50,37 MI,64.84496,-166.08517,brood,,,,3,JAJ,,1AU,FEDG,,, 
+2015,1AU,4,7/6/2015,14:21,37 MI,64.84278,-166.0881,brood,,,,3,NRH,Fully flighted,1AU,FEDG,,, 
+2015,1AU,5,7/7/2015,13:10,37 MI,,,brood,,,,3,JAJ,,1AU,FEDG,,, 
+2015,1AU,6,7/9/2015,14:03,37 MI,64.84178,-166.08652,brood,,,,2,NRH,,1AU,FEDG,,,"Radio from 1CA found on ground down slope of the road. Later AU and brood of two found, chicks captured and radio'd. "
+2015,1AU,7,7/10/2015,13:46,37 MI,64.84536,-166.08011,brood,,,,3,NRH,,1AU,FEDG,,, 
+2015,1AU,8,7/11/2015,13:35,37 MI,64.84496,-166.08348,brood,,,,3,NRH,,1AU,FEDG,,,"Found with 3 chicks on 11 July (1AX, 1AN (from XT), and unb. (now 1CY)). We believe this unbanded was from 6XN's brood. Radio on 1CY: D655 @ 165.9850, attached with leather patch. Parental protection nearly completely gone. "
+2015,1AU,9,7/12/2015,17:11,37 MI,64.84502,-166.09294,brood,,,,4,NRH,,1AU,FEDG,,,"Male not observed but group of 4 chicks including: 1AV, 1AX, 1CY, 1CC found. "
+2015,1AU,10,7/14/2015,,34 MI,64.81659,-165.92389,fledged,,,,1,NRH,,1AU,FEDG,,,Chick 1CM found alone. No siblings or male around. 
+2015,1AU,11,7/15/2015,,37 MI,64.84285,-166.06589,fledged,,,,,,,1AU,FEDG,,,1AY observed with flock of 4 others. 
+2015,1CT,1,7/8/2015,11:36,Feather East,64.83801,-165.91919,brood,,,,,JAJ,22+ d.o.,1CT,FEDG,,, 
+2015,1CU,1,7/8/2015,19:20,Feather West,64.84605,-165.94916,brood,,,,,LHD,24+ d.o.,1CU,FEDG,,, 
+2015,1EA,1,7/11/2015,16:15,37 MI,64.84209,-166.06369,fledged,,,,2,NRH,ca. 24 d.o.,1EA,FEDG,,,"Chicks: 1EC and 1UNB. 15 July 2015: CWW and NRH heard 1EA on radio. Apparently near the same location he was seen on 14 July. Not observation, but likely still with brood. 16 July 2015: CWW heard 1EA on radio, distantly. Unable to locate. "
+2015,1EA,2,7/12/2015,19:23,37 MI,64.84912,-166.05846,brood,,,,2,NRH,,1EA,FEDG,,,Chicks: 1EC and 1UNB 
+2015,1EA,3,7/14/2015,14:00,37 MI,64.84828,-166.02893,brood,,,,,CWW,,1EA,FEDG,,,Chick: 1UNB located 
+2015,6EV,1,6/24/2015,14:30,37 MI,64.85962,-166.07536,brood,,,,,LHD,7 d.o.,6EV,FELG,,,"6EV PinPoint: 145. Chicks: 1CU, 1CX, 2 UNB. 1CV Radio: D651 @ 165.160, best .158. 1CX Radio: D639 @ 164.274. From 17-19 July, only 1CX and 1CV detected via telemetry. "
+2015,6EV,2,7/9/2015,14:20,37 MI,64.8423,-166.06401,brood,,,,4,CWW,,6EV,FELG,,,"CWW relocated EV on the ridge to the E of 37, 3 chicks for sure, poss. 4. Male still slightly responsive but difficult to catch. Response "
+2015,6EV,3,7/10/2015,13:45,37 MI,64.84489,-166.06076,brood,,,,4,CWW,,6EV,FELG,,,"Chicks: 2 UNB, 1CV, 1CX "
+2015,6EV,4,7/11/2015,15:40,37 MI,64.84209,-166.06369,brood,,,,4,NRH,,6EV,FELG,,,"Chicks: 2 UNB, 1CV, 1CX. Found 6EV in close proximity to 6UP group, he was still associated with his 4 chicks. We were unable to capture his 2 UNB chicks. Vey flighty. "
+2015,6EV,5,7/12/2015,19:04,37 MI,64.84807,-166.05675,brood,,,,4,NRH,,6EV,FELG,,,"Chicks: 2 UNB, 1CV, 1CX. 6EV present, very responsive to chick call. "
+2015,6EV,6,7/14/2015,16:00,37 MI,64.8571,-166.06068,brood,,,,4,CWW,,6EV,FELG,,,"Tracked 1CX (CWW, see resighting) and also heard distantly 1 CV but not found as likely VERY distant. No male around and brood obviously disintegrated. Captured 2 unbanded fledglings near the road with that flock. These birds COULD have been his 2 UNB. "
+2015,6EV,7,7/15/2015,13:58,37 MI,64.86456,-166.06891,brood,,,,4,NRH,,6EV,FELG,,, 
+2015,6EV,8,7/16/2015,12:45,37 MI,64.8656,-166.06587,brood,,,,4,LHD,,6EV,FELG,,,"Chicks: 2UNB, 1CV, 1CX. "
+2015,6HJ,1,7/4/2015,12:17,34 MI,64.81659,-165.92389,brood,,,,2,LHD,ca. 9 d.0.,6HJ,FELG,,, 
+2015,6HV,1,6/28/2015,15:45,34 MI,64.8103,-165.95187,brood,,,,3,NRH,1 d.o.,6HV,FELG,,, 
+2015,6HV,2,7/4/2015,14:34,34 MI,64.8099,-165.95818,brood,,,,1,,,6HV,FELG,,, 
+2015,6HX,1,6/27/2015,19:45,Tombstone,64.93821,-166.20862,brood,,,,2,NRH,1 d.o.,6HX,FELG,,,5 July 2015: NOT observed by JAJ and WGH. 10 July 2015: NOT observed by WGH and LHD 
+2015,6HY,1,6/24/2015,15:56,Tombstone,64.93253,-166.20467,brood,,,,1,NRH,2 d.o.,6HY,FELG,,,5 July 2015: NOT observed by JAJ and WGH. 10 July 2015: NOT observed by WGH and LHD 
+2015,6HY,2,6/27/2015,18:36,Tombstone,64.9333,-166.20667,brood,,,,4,NRH,5 d.o.,6HY,FELG,,, 
+2015,6JH,1,6/22/2015,15:00,34 MI,64.82239,-166.03523,brood,,,,,LHD,Unk.,6JH,FELG,,,"6JH Radio: 164.114 MHz. Chicks: 1AA, 1AC, 1AE. Despite significant effort, no detections on 7 July. "
+2015,6JH,2,6/24/2015,9:44,34 MI,64.8213,-166.03806,brood,,,,3,LHD,7 d.o.,6JH,FELG,,,"Chicks captured: P10=ca. 20mm, P10 Exp=3mm "
+2015,6JH,3,6/27/2015,12:47,34 MI,64.82169,-166.04695,brood,,,,3,NRH,10 d.o.,6JH,FELG,,,"Radio on male, D634 @ 164.114 MHz. "
+2015,6JH,4,6/28/2015,18:03,34 MI,64.81756,-166.00668,brood,,,,,LHD,,6JH,FELG,,, 
+2015,6JH,5,7/4/2015,9:56,34 MI,64.81846,-166.00264,brood,,,,1,NRH,,6JH,FELG,,,6JH making pretty big flights. Responsive to chick call though. Chick seen only because it was flushed from hiding near where 6JH hunt out for a bit. 
+2015,6JH,6,7/5/2015,17:51,34 MI,64.81668,-166.00624,brood,,,,,NRH,,6JH,FELG,,, 
+2015,6JY,1,7/3/2015,14:52,37 MI,64.85162,-166.08574,brood,,,,2,LHD,6 d.o.,6JY,FELG,,, 
+2015,6JY,2,7/8/2015,22:02,37 MI,64.84197,-166.08383,brood,,,,,NRH,,6JY,FELG,,, 
+2015,6JY,3,7/9/2015,14:10,37 MI,64.84151,-166.08582,brood,,,,2,NRH,,6JY,FELG,,, 
+2015,6JY,4,7/10/2015,13:13,37 MI,64.84441,-166.08011,brood,,,,,NRH,,6JY,FELG,,, 
+2015,6JY,5,7/15/2015,14:54,37 MI,64.86189,-166.06818,brood,,,,2,NRH,Not flying,6JY,FELG,,, 
+2015,6JY,6,7/16/2015,13:02,37 MI,64.8643,-166.06897,brood,,,,2,NRH,One flying,6JY,FELG,,, 
+2015,6JY,7,7/18/2015,14:46,37 MI,64.86147,-166.06142,brood,,,,2,LHD,,6JY,FELG,,, 
+2015,6JY,8,7/19/2015,15:49,37 MI,64.85995,-166.06076,brood,,,,2,LHD,,6JY,FELG,,, 
+2015,6JY,9,7/20/2015,,37 MI,64.8642,-166.06851,brood,,,,2,LHD,,6JY,FELG,,, 
+2015,6LX,1,6/22/2015,15:00,34 MI,64.82239,-166.03523,brood,,,,,NRH,Unk <4 d.o.,6LX,FELG,,,"6LX Radio: 164.359. Chicks: 1CJ, 1CK, 1CH. Searched for on 9 July without detections. "
+2015,6LX,2,6/24/2015,11:30,34 MI,64.82362,-166.03636,brood,,,,4,NRH,5 d.o.,6LX,FELG,,, 
+2015,6LX,3,6/27/2015,16:58,34 MI,64.82136,-166.03743,brood,,,,4,NRH,7 d.o.,6LX,FELG,,,"Radio on adult @ 164.359 MHz, banded chicks. "
+2015,6LX,4,6/29/2015,12:33,34 MI,64.82232,-166.04076,brood,,,,3,NRH,9 d.o.,6LX,FELG,,, 
+2015,6LX,5,7/2/2015,20:26,34 MI,64.82533,-166.03105,brood,,,,2,CWW,,6LX,FELG,,, 
+2015,6LX,6,7/4/2015,19:30,34 MI,64.82533,-166.03105,brood,,,,,JAJ,,6LX,FELG,,, 
+2015,6LX,7,7/5/2015,13:16,34 MI,64.82484,-166.03148,brood,,,,3,NRH,,6LX,FELG,,, 
+2015,6TM,1,7/3/2015,22:00,37 MI,64.83879,-166.08391,brood,,,,3,LHD,17-18 d.o.,6TM,FELG,,,"Chicks: 1EX, 1EY, 1CE. 6TM PinPoint: 141. 1EX Radio: @ 164.310 (164.3091). 14 July 2015: 1EX and 1CE together, see re-sightings. Male not attending. Chick 1EH seen last at 37-Mile in association with the flock of 7 fledglings. Last photographed at 14:48, "
+2015,6TM,2,7/4/2015,11:20,37 MI,64.8419,-166.08116,brood,,,,2,JAJ,,6TM,FELG,,,"Watched for 15 min. Only 1 chick (with radio) observed, second chick heard calling. Chick and male looked good. Male antennaes observed. "
+2015,6TM,3,7/6/2015,15:00,37 MI,64.84278,-166.0881,brood,,,,4,LHD,Fully flighted,6TM,FELG,,, 
+2015,6TM,4,7/7/2015,13:35,37 MI,,,brood,,,,3,JAJ,,6TM,FELG,,, 
+2015,6TM,5,7/8/2015,21:47,37 MI,64.84158,-166.08475,brood,,,,4,NRH,,6TM,FELG,,,"Four large chicks observed lounging in the sun with male in attendance, without being flushed, all 5 observed to take off in flock and fly over ridge! "
+2015,6TM,6,7/9/2015,18:58,37 MI,64.84276,-166.08282,brood,,,,4,NRH,,6TM,FELG,,, 
+2015,6TM,7,7/10/2015,14:45,37 MI,64.83993,-166.08238,brood,,,,4,NRH,,6TM,FELG,,,"Chicks: 1EY, 1EX, 1AY, and 1CE "
+2015,6TM,8,7/11/2015,18:38,37 MI,64.8428,-166.08388,brood,,,,5,NRH,,6TM,FELG,,,"Chicks: 1EY, 1AY, 1CE, 1EX, and 1 UNB (now 1EH). 6TM found with 5 chicks, his four and a notably larger unbanded bird (now 1EH). Captured all 5 via herding at once. Re-attached EX's radio as it had grown out notable and also attached a radio to 1EH and we "
+2015,6TM,9,7/12/2015,18:09,37 MI,64.84088,-166.06602,brood,,,,5,NRH,,6TM,FELG,,,"Chicks: 1EY, 1AY, 1CE, 1EX, and 1EH. 6TM still with his 5 chicks and very responsive to chick call. "
+2015,6UM,1,6/24/2015,11:30,34 MI,64.82362,-166.03636,brood,,,,2,NRH,4 d.o.,6UM,FELG,,, 
+2015,6UP,1,6/24/2015,14:30,37 MI,64.85962,-166.07563,brood,,,,3,LHD,7 d.o.,6UP,FELG,,,"6UP PinPoint. 1AT (chick) radio: D637 @164.253. 6 July 2015: 6UP (chick) looked for but not found. 14 July 2015: No sign of 6UP, 1AP or 1AT. "
+2015,6UP,2,7/3/2015,15:54,37 MI,64.8506,-166.08218,brood,,,,2,NRH,,6UP,FELG,,,"PinPoint (140) on male, no radios on chick. "
+2015,6UP,3,7/4/2015,13:20,37 MI,64.84989,-166.08891,brood,,,,2,JAJ,,6UP,FELG,,,Both chicks and adult look great. Male chase LTJA. 
+2015,6UP,4,7/8/2015,22:00,37 MI,,,brood,,,,,CWW,,6UP,FELG,,,Heard on radio from somewhere across to drainage to the east of 37-Mile. 
+2015,6UP,5,7/9/2015,13:55,37 MI,64.84395,-166.06029,brood,,,,2,CWW,,6UP,FELG,,,"Located by CWW on same ridge to E of 37-Mile. Two chicks, 1AT and 1AP, barely flighted, male had no response to chick call. "
+2015,6UP,6,7/10/2015,13:30,37 MI,64.84733,-166.05414,brood,,,,2,CWW,,6UP,FELG,,,Chicks: 1AP and 1AT. Male still attending - waining though 
+2015,6UP,7,7/11/2015,15:36,37 MI,64.84209,-166.06369,brood,,,,3,NRH,,6UP,FELG,,,"Chicks: 1CC (from 6XN), 1AT, and 1AV (from 1AU). "
+2015,6UY,1,6/23/2015,14:30,34 MI,64.81679,-166.00095,brood,,,,2,NRH,6 d.o.,6UY,FELG,,,"6UY Radio: D654 @ 165.747 (best 165.745). Chicks: 1AJ, 1AK. Not heard on 7 July. Heard faintly on 11 July but unable to locate. "
+2015,6UY,2,6/26/2015,17:02,34 MI,64.81629,-166.00124,brood,,,,2,NRH,9+ d.o.,6UY,FELG,,,"Crown coming in, ample mantle feathers, see measurements. "
+2015,6UY,3,6/28/2015,12:37,34 MI,64.81631,-166.0011,brood,,,,2,NRH,11 d.o.,6UY,FELG,,, 
+2015,6UY,4,6/29/2015,13:58,34 MI,64.81944,-165.99571,brood,,,,2,NRH,12 d.o.,6UY,FELG,,, 
+2015,6UY,5,7/4/2015,15:10,34 MI,64.81338,-165.98889,brood,,,,2,,,6UY,FELG,,, 
+2015,6UY,6,7/5/2015,15:04,34 MI,64.81501,-165.99719,brood,,,,2,NRH,,6UY,FELG,,,"PinPoint (136, 13d/5 July) onto 6UY, chick 1AJ got UY's old radio @ 165.747. "
+2015,6VA,1,6/26/2015,16:00,34 MI,64.81047,-165.955,brood,,,,2,NRH,1 d.o.,6VA,FELG,,,6VA Radio: D650 @ 165.092 (Best = 165.0890) 
+2015,6VA,2,6/28/2015,16:44,34 MI,64.80927,-165.95491,brood,,,,1,NRH,4 d.o.,6VA,FELG,,,Radio: D650 @ 165.092 (Best = 165.0890) 
+2015,6XN,1,6/24/2015,12:58,37 MI,64.84525,-166.08733,brood,,,,2,NRH,9 d.o.,6XN,FELG,,,Chicks: 1CC. 11 July 2015: 6XN not observed but his banded chick (1CC) seen associated with 6UP brood and we believe his 2 UNB chicks were split between 1AU brood and 6TM brood. 
+2015,6XN,2,7/3/2015,20:11,37 MI,64.84182,-166.08354,brood,,,,2,LHD,,6XN,FELG,,,PinPoint 142 on adult. Radio D645 @ 164.3757 
+2015,6XN,3,7/4/2015,10:30,37 MI,64.84328,-166.08405,brood,,,,2,JAJ,,6XN,FELG,,,"Chick with radio alert, preening. Male alert, preening. Both antennaes detected. "
+2015,6XN,4,7/6/2015,,37 MI,64.84441,-166.07664,brood,,,,3,NRH,Fully flighted,6XN,FELG,,, 
+2015,6XN,5,7/7/2015,13:23,37 MI,,,brood,,,,2,JAJ,,6XN,FELG,,, 
+2015,6XN,6,7/8/2015,22:00,37 MI,64.84341,-166.08688,brood,,,,3,NRH,,6XN,FELG,,,"6XN seen with 3 chicks, 2 UNB, all seen together and in flight as a group. Male performed votile rodent run and alarm calls "
+2015,6XN,7,7/9/2015,,37 MI,64.84247,-166.09344,brood,,,,3,LHD,,6XN,FELG,,, 
+2015,6XN,8,7/10/2015,14:20,37 MI,64.84393,-166.07066,brood,,,,3,NRH,,6XN,FELG,,, 
+2015,6XT,1,7/3/2015,13:50,37 MI,64.85014,-166.09311,brood,,,,3,VAP,est. 17 d.o.,6XT,FELG,,,"Chicks: 1AL, 1AM, 1AN. 6XT PinPoint: 139. 1AL Radio: D653 @ 165.413 MHz. 14 July 2015: 1AN still around, no sign of AL or AM. 15 July 2015: 1AN still around - see resightings. "
+2015,6XT,2,7/6/2015,18:00,37 MI,64.8487,-166.1037,fledged,,,,3,JAJ,,6XT,FELG,,,"Male gone. JAJ tracked down the radio'd fledgling. No male around and 3 fledglings, all very close. "
+2015,6XT,3,7/9/2015,19:12,37 MI,64.8441,-166.08234,fledged,,,,,NRH,,6XT,FELG,,,Male observed not associated with chicks. 1AN with 1AU brood - 6XT associated with 6VM. 

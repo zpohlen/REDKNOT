@@ -1,0 +1,27 @@
+Year,BroodID,Visit,Date,Time,PlotID,Latitude,Longitude,Stage,HatchDate,AgeType,ChickAge,NumberChicks,Observer,ChickAgeEst,Adult1FlagCode,Adult1FlagColor,Adult2FlagCode,Adult2FlagColor,Comments
+2012,6CY,1,6/22/2012,22:23,34 MI,64.82529,-166.0381,brood,,,,4,LHD,,6CY,FELG,,, found
+2012,6CY,2,6/23/2012,23:23,34 MI,64.82462,-166.04207,brood,,,,4,LHD,ca. 3d.o.,6CY,FELG,,, banded
+2012,6CY,3,6/26/2012,0:23,34 MI,"64.8241,",-166.03152,brood,,,,,LHD,,6CY,FELG,,,"male found being very defensive, no brood observed though, extremely responsive to chick call "
+2012,6CY,4,7/1/2012,1:23,34 MI,64.82166,-166.03896,brood,,,,,LHD,,6CY,FELG,,,"found being very defensive, flying a lot, no chicks observed, no idea what's going on "
+2012,6CY,5,7/4/2012,2:23,34 MI,64.82425,-166.05157,brood,,,,,LHD,,6CY,FELG,,, 
+2012,6EA,1,6/26/2012,3:23,34 MI,,,brood,,,,4,NRH,ca. 1d.o.,6EA,FELG,,, 
+2012,6EA,2,6/27/2012,4:23,34 MI,64.81586,-166.00795,brood,,,,2,JAJ,,6EA,FELG,,, 
+2012,6EA,3,6/29/2012,5:23,34 MI,64.81625,-166.01691,brood,,,,1,LHD,,6EA,FELG,,, 
+2012,6EA,4,7/4/2012,6:23,34 MI,,,brood,,,,1,LHD,,6EA,FELG,,, 
+2012,6EL,1,6/30/2012,7:23,Feather,64.84786,-165.94469,brood,,,,4,NRH,ca. 2d.o.,6EL,FELG,,, 
+2012,6EL,2,7/3/2012,8:23,Feather,64.84518,-165.94975,brood,,,,1,NRH,,6EL,FELG,,, 
+2012,6JP,1,6/27/2012,9:23,34 MI,64.81292,-165.96718,brood,,,,4,JAJ,1-2 d.o.,6JP,FELG,,, 
+2012,6JP,2,6/28/2012,10:23,34 MI,64.81247,-165.96829,brood,,,,4,LHD,,6JP,FELG,,, banded
+2012,6JP,3,7/2/2012,11:23,34 MI,64.81401,-165.97456,brood,,,,4,LHD,,6JP,FELG,,," flagged, swabbed"
+2012,6JP,4,7/5/2012,12:23,34 MI,64.81321,-165.96666,brood,,,,4,FD,,6JP,FELG,,, 
+2012,6KN,1,6/23/2012,13:23,37 MI,64.85037,-166.08188,brood,,,,4,JAJ,,6KN,FELG,,, 
+2012,6KN,2,6/28/2012,14:23,37 MI,64.84476,-166.08301,brood,,,,4,JAJ,,6KN,FELG,,, 
+2012,6KN,3,6/30/2012,15:23,37 MI,64.85235,-166.08571,brood,,,,4,LHD,,6KN,FELG,,, 
+2012,6KN,4,7/4/2012,16:23,37 MI,64.8502,-166.08923,brood,,,,4,LHD,,6KN,FELG,,, 
+2012,6KV,1,6/30/2012,17:23,34 MI,64.81012,-165.95898,brood,,,,3,JAJ,,6KV,FELG,,, 
+2012,6KV,2,7/6/2012,18:23,34 MI,64.81275,-165.94101,brood,,,,3,LHD,,6KV,FELG,,, 
+2012,6LC,1,6/26/2012,19:23,34 MI,64.81879,-165.99619,brood,,,,4,JAJ,,6LC,FELG,,, banded
+2012,6LC,2,6/28/2012,20:23,34 MI,64.81948,-165.9984,brood,,,,3,LHD,,6LC,FELG,,, recaptured
+2012,6LC,3,6/29/2012,21:23,34 MI,64.81713,-165.99196,brood,,,,2,LEP,,6LC,FELG,,, 
+2012,6TE,1,6/28/2012,,37 MI,,,brood,,,,,LHD,ca. 4d.o.,6TE,FELG,,, 
+2012,6TE,2,6/30/2012,13:00,37 MI,64.85543,-166.0768,brood,,,,4,LHD,ca. 4d.o.,6TE,FELG,,, 

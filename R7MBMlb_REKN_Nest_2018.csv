@@ -1,0 +1,12 @@
+Year,NestID,Date,Time,PlotID,Latitude,Longitude,Observer,Visit,Stage,NestSeen,Eggs,Chicks,Adult1FlagCode,Adult1FlagColor,Adult2FlagCode,Adult2FlagColor,InitiationDate,NestCondition,Fox,EggFrags,EggBits,Membranes,MembranesShell,AdultBroody,BroodSeen,HowFailed,Comments|Egg1_Length|Egg1_Width|Egg1_Angle|Egg1_Surfaced|Egg1_mmAbove|Egg1_Mass(g)|Egg2_Length|Egg2_Width|Egg2_Angle|Egg2_Surfaced|Egg2_mmAbove|Egg2_Mass(g)|Egg3_Length|Egg3_Width|Egg3_Angle|Egg3_Surfaced|Egg3_mmAbove|Egg3_Mass(g)|Egg4_Length|Egg4_Width|Egg4_Angle|Egg4_Surfaced|Egg4_mmAbove|Egg4_Mass(g)|Est_Age(days)|Incubation_Date||%Lich_1|%Moss_1|%DST_1|%Forb_1|%Other_1|%Sedge_1|%Kinick_1|%Vacc_1|%Empet_1|%Heath_1|%BareRock_1|%LichRock_1|%BareSoil_1|%Lich_10|%Moss_10|%DST_10|%Forb_10|%Other_10|%Sedge_10|%Kinick_10|%Vacc_10|%Empet_10|%Heath_10|%BareRock_10|%LichRock_10|%BareSoil_10|Width|Depth|Conceal|Slope|Asp|Elev|Hatch_Date(est)|notes
+2018,BMC001,6/24/2018,14:00,37-Mile,64.850433,-166.097243,BMC,Initial Discovery,incubation,Y,4,,2LM,FEDG,1EV,FEDG,,,,,,,,,,,
+2018,BMC001,6/26/2018,16:08,37-Mile,64.84757968,-166.0950883,JAJ,2,incubation,Y,4,,,,,,,,,,,,,,,,2LM flushed off nest to float eggs
+2018,BMC001,6/28/2018,15:35,37-Mile,64.5632745,-165.5155753,JAJ,3,incubation,N,,,,,,,,,,,,,,,,,
+2018,BMC001,6/29/2018,17:11,37-Mile,64.85044015,-166.0972281,JAJ,Fate Determined,hatch,Y,0,4,,,,,6/6/2018,intact,no,yes,none,,Y,Y,,,Down and few shell frags in nest. 
+2018,BMC002,6/25/2018,11:12,34-Mile,64.81684492,-165.997695,BMC,Initial Discovery,incubation,Y,3,,6UY,FELG,UNK,,,,,,,,,,,,3 e
+2018,BMC002,6/27/2018,13:30,34-Mile,64.56330148,-165.5156062,JAJ,2,incubation,Y,3,,,,,,,,,,,,,,,,
+2018,BMC002,6/29/2018,11:21,34-Mile,64.81676592,-165.9979285,JAJ,3,incubation,N,,,,,,,,,,,,,,,,,Still active. 
+2018,BMC002,7/3/2018,16:34,34-Mile,64.81682039,-165.9977973,JAJ,4,incubation,N,,,,,,,,,,,,,,,,,
+2018,BMC002,7/7/2018,11:36,34-Mile,64.81669551,-165.9982722,JAJ,5,incubation,Y,3,,,,,,,,,,,,,,,,No sign of pipping/starring. 
+2018,BMC002,7/8/2018,16:56,34-Mile,64.81683885,-165.9980586,JAJ,6,incubation,N,,,,,,,,,,,,,,,,,Bird observed incubating. 
+2018,BMC002,7/12/2018,11:10,34-Mile,64.81683885,-165.9980586,ZMP,Fate Determined,hatch,Y,0,3,,,,,6/19/2018,intact,N,Y,none,,Y,Y,,,"6UY with chicks 6m from nest, hatch date on 7/11/2018"

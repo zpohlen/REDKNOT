@@ -1,0 +1,24 @@
+Year,BroodID,Visit,Date,Time,PlotID,Latitude,Longitude,Stage,HatchDate,AgeType,ChickAge,NumberChicks,Observer,ChickAgeEst,Adult1FlagCode,Adult1FlagColor,Adult2FlagCode,Adult2FlagColor,Comments
+2013,6EA,1,6/26/2013,15:30,34 MI,64.81755,-166.00768,brood,,,,4,LHD,2 d.o.,6EA,FELG,,, found
+2013,6EA,2,7/1/2013,17:14,34 MI,64.81273,-165.96812,brood,,,,2,LHD,,6EA,FELG,,, attempted capture
+2013,6EA,3,7/3/2013,19:10,34 MI,64.81489,-165.93314,brood,,,,2,LHD,,6EA,FELG,,, attempted capture
+2013,6EA,4,7/6/2013,16:20,34 MI,64.81631,-165.93515,brood,,,,2,LHD,,6EA,FELG,,, observed
+2013,6HC,1,7/1/2013,13:03,34 MI,64.81841,-166.00069,brood,,,,1,JAJ,,6HC,FELG,,,"formerly flag 6LC, changed flag to put geo on found"
+2013,6HC,2,7/3/2013,16:30,34 MI,,,brood,,,,1,LHD,5 d.o.,6HC,FELG,,, captured male
+2013,6HC,3,7/4/2013,15:30,34 MI,64.81767,-165.99385,brood,,,,1,LHD,,6HC,FELG,,, 
+2013,6HC,4,7/6/2013,12:00,34 MI,64.81569,-165.99217,brood,,,,1,LHD,,6HC,FELG,,, 
+2013,6HC,5,7/7/2013,15:00,34 MI,,,unk,,,,,LHD,,6HC,FELG,,," Male present, did not follow to check for brood."
+2013,6HJ,1,7/6/2013,16:30,34 MI,64.81631,-165.93515,brood,,,,2,LD,5 d.o.,6HJ,FELG,,,"Formerly flagged 6JP, now 6 HJ found, capture male, put geo on, and band chicks"
+2013,6HJ,2,7/7/2013,16:00,34 MI,64.81421,-165.93376,brood,,,,2,LD,,6HJ,FELG,,, 
+2013,6HV,1,7/3/2013,18:20,34 MI,64.81515,-165.94803,brood,,,,2,SMM,2-3 d.o.,6HV,FELG,,,"Formerly flagged 6KV, now 6HV. found"
+2013,6HV,2,7/6/2013,13:50,34 MI,,,brood,,,,1,LHD,,6HV,FELG,,, 
+2013,6HV,3,7/7/2013,,34 MI,,,brood,,,,1,JAJ,,6HV,FELG,,, 
+2013,6HX,1,7/2/2013,17:30,Tombstone,64.94184,-166.20691,brood,,,,3,JAJ,3-4 d.o.,6HX,FELG,,,"likely from NRH_001 nest found, captured male"
+2013,6HX,2,7/5/2013,16:14,Tombstone,64.93666,-166.20985,brood,,,,3,LHD,,6HX,FELG,,," Male in very poor condition, flushed from brooding chicks. No response to chick call or us flushing the bird. Male went directly to foraging…..not in good shape."
+2013,6HY,1,7/2/2013,15:40,Tombstone,64.93504,-166.2086,brood,,,,1,LHD,4 - 5 d.o.,6HY,FELG,,," found, captured male"
+2013,6HY,2,7/5/2013,16:15,Tombstone,64.93666,-166.20199,fail,,,,,LHD,,6HY,FELG,,, No apparent chicks. Fail……
+2013,6UM,1,6/24/2013,17:54,34 MI,64.82343,-166.04189,brood,,,,4,NRH,2 d.o.,6UM,FELG,,," captured male, no blood"
+2013,6UM,2,6/26/2013,15:30,34 MI,,,brood,,,,4,JAJ,4 d.o.,6UM,FELG,,, observed
+2013,6UM,3,6/28/2013,16:45,34 MI,64.82383,-166.03831,brood,,,,4,LHD,,6UM,FELG,,, observed
+2013,6UM,4,7/1/2013,16:43,34 MI,64.82383,-166.03831,brood,,,,3,LHD,,6UM,FELG,,, bled male
+2013,6UM,5,7/6/2013,19:21,34 MI,64.82157,-166.034,brood,,,,1,LHD,,6UM,FELG,,, observed
