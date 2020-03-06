@@ -594,3 +594,37 @@ caret::confusionMatrix(df.jacknife1GHM.acc)
 caret::confusionMatrix(df.jacknife2GHM.acc)
 caret::confusionMatrix(df.jacknife3GHM.acc)
 caret::confusionMatrix(df.jacknife4GHM.acc)
+
+
+#############################################################################################################
+#combine GH and Nome
+
+
+ASN <- rbind(df,dfGH.nosite)
+
+summary(ASN)
+
+correlationsASN <- cor(ASN[,2:5])
+corrplot(correlationsASN, method="circle")
+
+p1ASN <- ggplot(ASN,aes(x=Culmen, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+p2ASN <- ggplot(ASN,aes(x=TotalHead, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+p3ASN <- ggplot(ASN,aes(x=TarsusDiagonal, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+p4ASN <- ggplot(ASN,aes(x=Wing, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+multiplot(p1ASN, p2ASN, p3ASN, p4ASN, cols = 2)
+
+
+df.jacknife1ASN <- lda(CHDSex~.,data = ASN, CV = TRUE)
+df.jacknife2ASN <- lda(CHDSex~ Culmen + Wing + TarsusDiagonal, data = ASN, CV = TRUE)
+df.jacknife3ASN <- lda(CHDSex~ Culmen + Wing + TotalHead, data = ASN, CV = TRUE)
+df.jacknife4ASN <- lda(CHDSex~ TotalHead + Wing, data = ASN, CV = TRUE)
+
+df.jacknife1ASN.acc <- table(ASN$CHDSex, df.jacknife1ASN$class, dnn = c("Actual Group", "Predicted Group"))
+df.jacknife2ASN.acc <- table(ASN$CHDSex, df.jacknife2ASN$class, dnn = c("Actual Group", "Predicted Group"))
+df.jacknife3ASN.acc <- table(ASN$CHDSex, df.jacknife3ASN$class, dnn = c("Actual Group", "Predicted Group"))
+df.jacknife4ASN.acc <- table(ASN$CHDSex, df.jacknife4ASN$class, dnn = c("Actual Group", "Predicted Group"))
+
+caret::confusionMatrix(df.jacknife1ASN.acc)
+caret::confusionMatrix(df.jacknife2ASN.acc)
+caret::confusionMatrix(df.jacknife3ASN.acc)
+caret::confusionMatrix(df.jacknife4ASN.acc)
