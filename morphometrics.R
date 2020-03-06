@@ -1,4 +1,4 @@
-setwd("T:/Pohlen/R")
+#setwd("T:/Pohlen/R")
 library(psych)
 library(MASS)
 library(dplyr)
