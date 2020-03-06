@@ -311,7 +311,7 @@ sum(df.samplesplit4.acc[row(df.samplesplit4.acc) == col(df.samplesplit4.acc)]) /
 
 #Create dataframes for graphing####################################################################################
 #jacknife
-df.jacknife1.g <- data.frame(type = df.outliers.out[,1], lda = df.jacknife1$x)
+#df.jacknife1.g <- data.frame(type = df.outliers.out[,1], lda = df.jacknife1$x)
 
 #resubstitution
 df.resub1.g <- data.frame(type = df.outliers.out[,1], lda = df.resub1.predict$x)
@@ -403,7 +403,7 @@ corrplot(correlationsGH.nosite, method="circle")
 
 #Test for homoscedasticity
 
-boxM(df[2:5],dfGH.nosite$CHDSex)
+#boxM(df[2:5],dfGH.nosite$CHDSex)
 
 
 percentage.to.remove <- 2 # Remove % of points
@@ -465,7 +465,7 @@ multiplot(p1GH, p2GH, p3GH, p4GH, cols = 2)
 
 #Test for homoscedasticity
 
-boxM(df[2:5],dfGH$site.sex)
+#boxM(df[2:5],dfGH$site.sex)
 
 #Mahalanobis outliers
 
@@ -519,7 +519,7 @@ multiplot(p1GHF, p2GHF, p3GHF, p4GHF, cols = 2)
 
 #Test for homoscedasticity
 
-boxM(df[2:5],dfGHF$site.sex)
+#boxM(df[2:5],dfGHF$site.sex)
 
 #Mahalanobis outliers
 
@@ -563,7 +563,7 @@ multiplot(p1GHM, p2GHM, p3GHM, p4GHM, cols = 2)
 
 #Test for homoscedasticity
 
-boxM(df[2:5],dfGHM$site.sex)
+#boxM(df[2:5],dfGHM$site.sex)
 
 #Mahalanobis outliers
 
