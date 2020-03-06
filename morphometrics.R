@@ -383,7 +383,7 @@ ggplot(df.samplesplit4.g, aes(LD1, fill = type)) +
 ##Grays Harbor known sex and breeding site#####################################################################
 
 #Red GH banding file
-GHband <- read.csv("T:/Pohlen/R/R7MBMlb_GH_banding.csv", stringsAsFactors = FALSE)
+GHband <- read.csv("R7MBMlb_GH_banding.csv", stringsAsFactors = FALSE)
 
 summary(GHband)
 
@@ -395,12 +395,10 @@ dfGH.nosite <- GHband %>% filter(
 dfGH.nosite <- dplyr::select(dfGH.nosite, CHDSex, Culmen, TotalHead, TarsusDiagonal, Wing)
 dfGH.nosite <- na.omit(dfGH.nosite)
 
-dfGH.nosite$CHDSex <- as.factor(dfGH$CHDSex)
+dfGH.nosite$CHDSex <- as.factor(dfGH.nosite$CHDSex)
 
 correlationsGH.nosite <- cor(dfGH.nosite[,2:5])
 corrplot(correlationsGH.nosite, method="circle")
-
-
 
 
 #Test for homoscedasticity
@@ -409,7 +407,7 @@ boxM(df[2:5],dfGH.nosite$CHDSex)
 
 
 percentage.to.remove <- 2 # Remove % of points
-number.to.remove <- trunc(nrow(dfGH) * percentage.to.remove / 100)
+number.to.remove <- trunc(nrow(dfGH.nosite) * percentage.to.remove / 100)
 
 #Look for outliers using all criteria
 m.dist.ns <- mahalanobis(dfGH.nosite[, 2:5], colMeans(dfGH.nosite[, 2:5]), cov(dfGH.nosite[, 2:5]))
@@ -457,7 +455,7 @@ dfGH$site.sex <- as.factor(dfGH$site.sex)
 summary(dfGH)
 
 correlationsGH <- cor(dfGH[,2:5])
-corrplot(correlations, method="circle")
+corrplot(correlationsGH, method="circle")
 
 p1GH <- ggplot(dfGH,aes(x=Culmen, fill=site.sex)) + geom_density(alpha=0.25, adjust = 2.5)
 p2GH <- ggplot(dfGH,aes(x=TotalHead, fill=site.sex)) + geom_density(alpha=0.25, adjust = 2.5)
@@ -497,27 +495,6 @@ caret::confusionMatrix(df.jacknife1GH.acc)
 caret::confusionMatrix(df.jacknife2GH.acc)
 caret::confusionMatrix(df.jacknife3GH.acc)
 caret::confusionMatrix(df.jacknife4GH.acc)
-
-#Use the LDA to predict the sex in a confusion matrix######################################################
-
-
-#Cross-validation
-df.jacknife1GH <- lda(site.sex~.,data = dfGH.outliers.out[,2:6], CV = TRUE)
-df.jacknife2GH <- lda(site.sex~ Culmen + Wing + TarsusDiagonal, data = dfGH.outliers.out, CV = TRUE)
-df.jacknife3GH <- lda(site.sex~ Culmen + Wing + TotalHead, data = dfGH.outliers.out, CV = TRUE)
-df.jacknife4GH <- lda(site.sex~ TotalHead + Wing, data = dfGH.outliers.out, CV = TRUE)
-
-df.jacknife1GH.acc <- table(dfGH.outliers.out$site.sex, df.jacknife1GH$class, dnn = c("Actual Group", "Predicted Group"))
-df.jacknife2GH.acc <- table(dfGH.outliers.out$site.sex, df.jacknife2GH$class, dnn = c("Actual Group", "Predicted Group"))
-df.jacknife3GH.acc <- table(dfGH.outliers.out$site.sex, df.jacknife3GH$class, dnn = c("Actual Group", "Predicted Group"))
-df.jacknife4GH.acc <- table(dfGH.outliers.out$site.sex, df.jacknife4GH$class, dnn = c("Actual Group", "Predicted Group"))
-
-caret::confusionMatrix(df.jacknife1GH.acc)
-caret::confusionMatrix(df.jacknife2GH.acc)
-caret::confusionMatrix(df.jacknife3GH.acc)
-caret::confusionMatrix(df.jacknife4GH.acc)
-
-
 
 #known sex predict breeding site################################################################################
 #select males from GH
