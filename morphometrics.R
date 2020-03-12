@@ -598,19 +598,81 @@ caret::confusionMatrix(df.jacknife4GHM.acc)
 
 #############################################################################################################
 #combine GH and Nome
+df$site <- "AK"
+dfGH.nosite$site <- "WA"
 
+#subset males and females based on breeding site from GH birds
+REKNAM <- subset(dfGH, site.sex == "AM", select = c(Culmen,TarsusDiagonal,TotalHead,Wing, CHDSex))
+REKNAF <- subset(dfGH, site.sex == "AF", select = c(Culmen,TarsusDiagonal,TotalHead,Wing, CHDSex))
+REKNWM <- subset(dfGH, site.sex == "WM", select = c(Culmen,TarsusDiagonal,TotalHead,Wing, CHDSex))
+REKNWF <- subset(dfGH, site.sex == "WF", select = c(Culmen,TarsusDiagonal,TotalHead,Wing, CHDSex))
 
+#subset males and females from Nome birds
+REKNNM <- subset(df, CHDSex == "M", select = c(Culmen,TarsusDiagonal,TotalHead,Wing, CHDSex))
+REKNNF<- subset(df, CHDSex == "F", select = c(Culmen,TarsusDiagonal,TotalHead,Wing, CHDSex))
+
+#combine all roselaari knots
 ASN <- rbind(df,dfGH.nosite)
 
-summary(ASN)
-
+#correlations in biometrics for all roselaari knots
 correlationsASN <- cor(ASN[,2:5])
 corrplot(correlationsASN, method="circle")
+
+#subset males and females from all roselaari knots
+REKNM <- subset(ASN, CHDSex == "M", select = c(Culmen,TarsusDiagonal,TotalHead,Wing))
+REKNF <- subset(ASN, CHDSex == "F", select = c(Culmen,TarsusDiagonal,TotalHead,Wing))
+
+#combine nome males to alaska breeding GH birds
+REKNallAM <- rbind(REKNNM, REKNAM)
+
+#combine nome females to alaska breeding GH birds
+REKNallAF <- rbind(REKNNF, REKNAF)
+
+#test significance of biometrics between all roselaari males and females
+t.test(REKNM$Culmen,REKNF$Culmen)
+t.test(REKNM$TarsusDiagonal,REKNF$TarsusDiagonal)
+t.test(REKNM$TotalHead,REKNF$TotalHead)
+t.test(REKNM$Wing,REKNF$Wing)
+
+#test significance of biometrics between male alaska and male wrangel
+t.test(REKNallAM$Culmen,REKNWM$Culmen)
+t.test(REKNallAM$TarsusDiagonal,REKNWM$TarsusDiagonal)
+t.test(REKNallAM$TotalHead,REKNWM$TotalHead)
+t.test(REKNallAM$Wing,REKNWM$Wing)
+
+#test significance of biometrics between female alaska and female wrangel
+t.test(REKNallAF$Culmen,REKNWF$Culmen)
+t.test(REKNallAF$TarsusDiagonal,REKNWF$TarsusDiagonal)
+t.test(REKNallAF$TotalHead,REKNWF$TotalHead)
+t.test(REKNallAF$Wing,REKNWF$Wing)
+
 
 p1ASN <- ggplot(ASN,aes(x=Culmen, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
 p2ASN <- ggplot(ASN,aes(x=TotalHead, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
 p3ASN <- ggplot(ASN,aes(x=TarsusDiagonal, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
 p4ASN <- ggplot(ASN,aes(x=Wing, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+multiplot(p1ASN, p2ASN, p3ASN, p4ASN, cols = 2)
+
+p1ASN <- ggplot(ASN,aes(y=Culmen, x=CHDSex, fill=CHDSex)) +
+                                            geom_boxplot(alpha=0.25) + 
+                                            scale_fill_grey() + 
+                                            labs(x=element_blank(), y="Culmen (mm)") +
+                                            theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+p2ASN <- ggplot(ASN,aes(y=TotalHead, x=CHDSex, fill=CHDSex)) +
+                                            geom_boxplot(alpha=0.25) + 
+                                            scale_fill_grey() +
+                                            labs(x="Sex", y="Total Head (mm)") +
+                                            theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+p3ASN <- ggplot(ASN,aes(y=TarsusDiagonal, x=CHDSex, fill=CHDSex)) + 
+                                            geom_boxplot(alpha=0.25) + 
+                                            scale_fill_grey() +
+                                            labs(x=element_blank(),y="Tarsus (mm)") +
+                                            theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+p4ASN <- ggplot(ASN,aes(y=Wing, x=CHDSex, fill=CHDSex)) +
+                                            geom_boxplot(alpha=0.25) +
+                                            scale_fill_grey() +
+                                            labs(x="Sex", y="Wing (mm)") +
+                                            theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
 multiplot(p1ASN, p2ASN, p3ASN, p4ASN, cols = 2)
 
 
