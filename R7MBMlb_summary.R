@@ -36,7 +36,7 @@ data.allband$AgeID <- as.factor(data.allband$AgeID)
 data.juv <- as.data.frame(data.allband %>%
   filter(data.allband$AgeID == "L" | data.allband$AgeID == "HY"))
 
-nls.Gompertz.growth.fit = nls(Weight ~ A*exp(-exp(-K*(Age-T))), data.juv, start=list(A=90, T=10, K=0.2))
+nls.Gompertz.growth.fit = nls(Weight ~ A*exp(-exp(-K*(ChickAge-T))), data.juv, start=list(A=90, T=10, K=0.2))
 #A	=	coef(nls.Gompertz.growth.fit)[1]
 #T	=	coef(nls.Gompertz.growth.fit)[2]
 #K	=	coef(nls.Gompertz.growth.fit)[3]
