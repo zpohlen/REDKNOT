@@ -6,24 +6,24 @@
 
 
 ##read in banding data from Nome in each year file
-band2010 <- read.csv("R7MBMlb_REKN_Banding_2010.csv", stringsAsFactors = FALSE)
-band2011 <- read.csv("R7MBMlb_REKN_Banding_2011.csv", stringsAsFactors = FALSE)
-band2012 <- read.csv("R7MBMlb_REKN_Banding_2012.csv", stringsAsFactors = FALSE)
-band2013 <- read.csv("R7MBMlb_REKN_Banding_2013.csv", stringsAsFactors = FALSE)
-band2014 <- read.csv("R7MBMlb_REKN_Banding_2014.csv", stringsAsFactors = FALSE)
-band2015 <- read.csv("R7MBMlb_REKN_Banding_2015.csv", stringsAsFactors = FALSE)
-band2016 <- read.csv("R7MBMlb_REKN_Banding_2016.csv", stringsAsFactors = FALSE)
-band2017 <- read.csv("R7MBMlb_REKN_Banding_2017.csv", stringsAsFactors = FALSE)
-band2018 <- read.csv("R7MBMlb_REKN_Banding_2018.csv", stringsAsFactors = FALSE)
-band2019 <- read.csv("R7MBMlb_REKN_Banding_2019.csv", stringsAsFactors = FALSE)
+band2010 <- read.csv("data/R7MBMlb_REKN_Banding_2010.csv", stringsAsFactors = FALSE)
+band2011 <- read.csv("data/R7MBMlb_REKN_Banding_2011.csv", stringsAsFactors = FALSE)
+band2012 <- read.csv("data/R7MBMlb_REKN_Banding_2012.csv", stringsAsFactors = FALSE)
+band2013 <- read.csv("data/R7MBMlb_REKN_Banding_2013.csv", stringsAsFactors = FALSE)
+band2014 <- read.csv("data/R7MBMlb_REKN_Banding_2014.csv", stringsAsFactors = FALSE)
+band2015 <- read.csv("data/R7MBMlb_REKN_Banding_2015.csv", stringsAsFactors = FALSE)
+band2016 <- read.csv("data/R7MBMlb_REKN_Banding_2016.csv", stringsAsFactors = FALSE)
+band2017 <- read.csv("data/R7MBMlb_REKN_Banding_2017.csv", stringsAsFactors = FALSE)
+band2018 <- read.csv("data/R7MBMlb_REKN_Banding_2018.csv", stringsAsFactors = FALSE)
+band2019 <- read.csv("data/R7MBMlb_REKN_Banding_2019.csv", stringsAsFactors = FALSE)
 ##combine all banding files from Nome
 allband <- rbind(band2019, band2018, band2017, band2016, band2015, band2014, band2013, band2012, band2011, band2010)
 
 ##read in banding data from Gray's Harbor for 2017 and 2018
-GHband <- read.csv("R7MBMlb_GH_banding.csv", stringsAsFactors = TRUE)
+GHband <- read.csv("data/R7MBMlb_GH_banding.csv", stringsAsFactors = TRUE)
 
 ##read in banding data from Wrangel Island 
-dfWR <- read.csv("Wrangel_REKN.csv", stringsAsFactors = TRUE)
+dfWR <- read.csv("data/Wrangel_REKN.csv", stringsAsFactors = TRUE)
 
 
 #######################################################################################################################################
