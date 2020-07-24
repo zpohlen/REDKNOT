@@ -1,0 +1,662 @@
+---
+output:
+  rmarkdown::html_document:
+    theme: journal
+---
+
+
+# LDA for Red Knots captured in Nome and Grays Harbor
+
+
+The means of bringing in data sources and cleaning up the will be different between projects, so this step is glossed over. We are bringing in the all the Red Knots captured in Nome, all the Red Knots captured on Wrangel Island, all the Red Knots captured in Grays Harbor, and subsetting out birds from Grays Harbor that were tracked to Alaska and those tracked to Wrangel Island.
+```{r include = FALSE}
+
+library(dplyr)
+library(knitr)
+opts_knit$set(eval.after = 'fig.cap')
+
+band2010 <- read.csv("R7MBMlb_REKN_Banding_2010.csv", stringsAsFactors = FALSE)
+band2011 <- read.csv("R7MBMlb_REKN_Banding_2011.csv", stringsAsFactors = FALSE)
+band2012 <- read.csv("R7MBMlb_REKN_Banding_2012.csv", stringsAsFactors = FALSE)
+band2013 <- read.csv("R7MBMlb_REKN_Banding_2013.csv", stringsAsFactors = FALSE)
+band2014 <- read.csv("R7MBMlb_REKN_Banding_2014.csv", stringsAsFactors = FALSE)
+band2015 <- read.csv("R7MBMlb_REKN_Banding_2015.csv", stringsAsFactors = FALSE)
+band2016 <- read.csv("R7MBMlb_REKN_Banding_2016.csv", stringsAsFactors = FALSE)
+band2017 <- read.csv("R7MBMlb_REKN_Banding_2017.csv", stringsAsFactors = FALSE)
+band2018 <- read.csv("R7MBMlb_REKN_Banding_2018.csv", stringsAsFactors = FALSE)
+band2019 <- read.csv("R7MBMlb_REKN_Banding_2019.csv", stringsAsFactors = FALSE)
+
+allband <- rbind(band2019, band2018, band2017, band2016, band2015, band2014, band2013, band2012, band2011, band2010)
+
+#filter by adults and REKN in Nome
+allbandadults <- allband %>% filter(
+  AgeID == "AHY" | AgeID == "ASY" | AgeID == "ATY",
+  Species == "REKN") %>%
+  droplevels
+
+all.sexed.adults <- allbandadults %>% filter(
+  CHDSex == "M" | CHDSex == "F") %>%
+  droplevels
+
+#pull select fields with minimal NAs
+df <- dplyr::select(all.sexed.adults, CHDSex, Culmen, TotalHead, TarsusDiagonal, Wing)
+df <- na.omit(df)
+
+df.m <- df %>% filter(CHDSex == "M")
+df.m$site <- "Alaska"
+
+df.f <- df %>% filter(CHDSex == "F")
+df.f$site <- "Alaska"
+
+df$CHDSex <- as.factor(df$CHDSex)
+
+#Red GH banding file
+GHband <- read.csv("R7MBMlb_GH_banding.csv", stringsAsFactors = TRUE)
+#read file for mass correlations
+GHmass <- read.csv("R7MBMlb_GH_banding.csv", stringsAsFactors = TRUE)
+
+dfGH<- GHband %>% filter(
+  CHDSex == "M" | CHDSex == "F") %>%
+  droplevels
+#filter file for mass correlations
+GHmass<- GHmass %>% filter(
+  CHDSex == "M" | CHDSex == "F") %>%
+  droplevels
+#select males tracked to Wrangel
+dfGH.WR.m <- dfGH %>% filter(
+  site.sex == "WM") %>%
+  droplevels
+
+dfGH.WR.m<- dplyr::select(dfGH.WR.m, CHDSex, Culmen, TotalHead, TarsusDiagonal, Wing)
+dfGH.WR.m<- na.omit(dfGH.WR.m)
+dfGH.WR.m$site <- "T_Wrangel"
+
+#select females tracked to wrangel
+dfGH.WR.f <- dfGH %>% filter(
+  site.sex == "WF") %>%
+  droplevels
+dfGH.WR.f<- dplyr::select(dfGH.WR.f, CHDSex, Culmen, TotalHead, TarsusDiagonal, Wing)
+dfGH.WR.f<- na.omit(dfGH.WR.f)
+dfGH.WR.f$site <- "T_Wrangel"
+
+#select males tracked to ALASKA
+dfGH.AK.m <- dfGH %>% filter(
+  site.sex == "AM") %>%
+  droplevels
+
+dfGH.AK.m<- dplyr::select(dfGH.AK.m, CHDSex, Culmen, TotalHead, TarsusDiagonal, Wing)
+dfGH.AK.m<- na.omit(dfGH.AK.m)
+dfGH.AK.m$site <- "T_Alaska"
+
+#select females tracked to ALASKA
+dfGH.AK.f <- dfGH %>% filter(
+  site.sex == "AF") %>%
+  droplevels
+dfGH.AK.f<- dplyr::select(dfGH.AK.f, CHDSex, Culmen, TotalHead, TarsusDiagonal, Wing)
+dfGH.AK.f<- na.omit(dfGH.AK.f)
+dfGH.AK.f$site <- "T_Alaska"
+
+#remove unnecessary columns
+dfGH<- dplyr::select(dfGH, CHDSex, Culmen, TotalHead, TarsusDiagonal, Wing)
+dfGH<- na.omit(dfGH)
+
+#select variables for mass correlations
+GHmass <- dplyr::select(GHmass, CHDSex, Culmen, TotalHead, TarsusDiagonal, Wing, mass)
+GHmass <- na.omit(GHmass)
+
+dfGH$CHDSex <- as.factor(dfGH$CHDSex)
+
+#Read in Wrangel Island knots
+dfWR <- read.csv("Wrangel_REKN.csv", stringsAsFactors = TRUE)
+dfWR <- dplyr::select(dfWR,CHDSex, Culmen, TotalHead, TarsusDiagonal, Wing)
+
+dfWR <- dfWR %>% filter(
+  CHDSex == "M" | CHDSex == "F") %>%
+  droplevels
+
+
+dfWR<- na.omit(dfWR)
+
+dfWR.f <- dfWR %>% filter(CHDSex == "F")
+dfWR.f$site <- "Wrangel"
+
+dfWR.m <- dfWR %>% filter(CHDSex == "M")
+dfWR.m$site <- "Wrangel"
+
+
+#combine measurements from all three sites
+all.rekn <- rbind(df,dfGH, dfWR)
+
+#all males labeled by data source
+all.m <- rbind(dfGH.WR.m, df.m, dfWR.m, dfGH.AK.m)
+
+all.f <- rbind(dfGH.WR.f, df.f, dfWR.f, dfGH.AK.f)
+
+all.AK.m <- rbind(df.m, dfGH.AK.m)
+all.AK.m$loc <- "AK"
+all.WR.m <- rbind(dfWR.m, dfGH.WR.m)
+all.WR.m$loc <- "WR"
+all.m1 <- rbind(all.AK.m, all.WR.m)
+
+all.AK.f <- rbind(df.f, dfGH.AK.f)
+all.AK.f$loc <- "AK"
+all.WR.f <- rbind(dfWR.f, dfGH.WR.f)
+all.WR.f$loc <- "WR"
+
+all.f1 <- rbind(all.WR.f, all.AK.f)
+
+```
+
+```{r include = FALSE}
+##Multiplot function
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+  library(grid)
+  
+  # Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
+  
+  numPlots = length(plots)
+  
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) {
+    # Make the panel
+    # ncol: Number of columns of plots
+    # nrow: Number of rows needed, calculated from # of cols
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+                     ncol = cols, nrow = ceiling(numPlots/cols))
+  }
+  
+  if (numPlots==1) {
+    print(plots[[1]])
+    
+  } else {
+    # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+    
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
+      
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
+}
+
+```
+
+First, Lets investigate differences between our Alaska breeding Knots and our Wrangel Island breeding knots. Unfortuantly, we are gong to be dealing with biased and small sample sizes with birds from Wrangel Island. Comparing males, we can visually investiage the differences between each data source in each measurement with boxplots. 
+
+First we can look at the differences with males.
+
+```{r echo=FALSE, fig.align='center'}
+library(ggplot2)
+a1 <- ggplot(all.m, aes(y=Culmen, x=site, fill = site))+
+  geom_boxplot(alpha=0.25) + 
+  scale_fill_grey() + 
+  labs(x=element_blank(), y="Culmen (mm)") +
+  theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none") +
+  stat_summary(fun=mean, geom="point", shape=20, size=2, color="black") +
+  ggtitle("Culmen")
+a2 <- ggplot(all.m, aes(y=TotalHead, x=site, fill = site))+
+  geom_boxplot(alpha=0.25) + 
+  scale_fill_grey() + 
+  labs(x=element_blank(), y="Total Head (mm)") +
+  theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none") +
+  stat_summary(fun=mean, geom="point", shape=20, size=2, color="black") +
+  ggtitle("Total Head")
+a3 <- ggplot(all.m, aes(y=Wing, x=site, fill = site))+
+  geom_boxplot(alpha=0.25) + 
+  scale_fill_grey() + 
+  labs(x=element_blank(), y="Wing (mm)") +
+  theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none") +
+  stat_summary(fun=mean, geom="point", shape=20, size=2, color="black") +
+  ggtitle("Wing")
+a4 <- ggplot(all.m, aes(y=TarsusDiagonal, x=site, fill = site))+
+  geom_boxplot(alpha=0.25) + 
+  scale_fill_grey() + 
+  labs(x=element_blank(), y="Tarsus Diagonal (mm)") +
+  theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none") +
+  stat_summary(fun=mean, geom="point", shape=20, size=2, color="black") +
+  ggtitle("Tarsus")
+multiplot(a1, a2, a3, a4, cols = 2)
+
+```
+
+Here we can see lots of overlap. T_Alaska and T_Wrangel represent birds that were tracked using satellite tags from Grays Harbor to those respective breeding grounds. Alaska males n = `r nrow(df.m)`, Wrangel males n = `r nrow(dfWR.m)`, males tracked to Alaska n = `r nrow(dfGH.AK.m)`, males tracked to Wrangel n = `r nrow(dfGH.WR.m)`. 
+
+Next, we can look at the differences with females.
+
+```{recho=FALSE, fig.align='center'}
+a5 <- ggplot(all.f, aes(y=Culmen, x=site, fill = site))+
+  geom_boxplot(alpha=0.25) + 
+  scale_fill_grey() + 
+  labs(x=element_blank(), y="Culmen (mm)") +
+  theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none") +
+  stat_summary(fun=mean, geom="point", shape=20, size=2, color="black") +
+  ggtitle("Culmen")
+a6 <- ggplot(all.f, aes(y=TotalHead, x=site, fill = site))+
+  geom_boxplot(alpha=0.25) + 
+  scale_fill_grey() + 
+  labs(x=element_blank(), y="Total Head (mm)") +
+  theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none") +
+  stat_summary(fun=mean, geom="point", shape=20, size=2, color="black") +
+  ggtitle("Total Head")
+a7 <- ggplot(all.f, aes(y=Wing, x=site, fill = site))+
+  geom_boxplot(alpha=0.25) + 
+  scale_fill_grey() + 
+  labs(x=element_blank(), y="Wing (mm)") +
+  theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none") +
+  stat_summary(fun=mean, geom="point", shape=20, size=2, color="black") +
+  ggtitle("Wing")
+a8 <- ggplot(all.f, aes(y=TarsusDiagonal, x=site, fill = site))+
+  geom_boxplot(alpha=0.25) + 
+  scale_fill_grey() + 
+  labs(x=element_blank(), y="Tarsus Diagonal (mm)") +
+  theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none") +
+  stat_summary(fun=mean, geom="point", shape=20, size=2, color="black") +
+  ggtitle("Tarsus")
+multiplot(a5, a6, a7, a8, cols = 2)
+```
+
+
+Final dataframe to be working with should look something like this when all data sources are combined. CHDSex is the known molecular sex, culmen, totalHead, tarsus diagonal, and Wing are morphometric measurements collected from all individuals. Nares-to-tip was also measured, but only in a subset of years. Mass was collected, but I elected to not include it given so many variables in REKN that influence MASS outside of sex (days at stopover, health, time of year). Variables will depend on what morphometric measurements were collected for the species.
+
+```{r echo=FALSE, fig.align='center'}
+head(all.rekn, n=10)
+
+```
+
+### Examine the Data
+
+***
+
+First, visually examine the measurements to look for highly correlated measurements. This can be preformed using package "corrplot". 
+
+```{r eval=FALSE, message = FALSE}
+
+library(corrplot)
+
+correlations <- cor(all.rekn[,2:5])
+corrplot(correlations, method="circle")
+
+```
+
+```{r, echo=FALSE, message = FALSE, fig.cap = cap}
+library(corrplot)
+
+correlations <- cor(all.rekn[,2:5])
+corrplot(correlations, method="circle")
+
+cap <- "Figure 1. Correlations between morphometric measurements. Larger blue circles indicating high posotive correlation, and large red circles indicating high negative correlation. Here we are seeing all posotive correlations, but culmen and total head having the highest correlation."
+```
+
+<br/><br/>
+Culmen and total head show the highest correlation, and should be used together in a LDA with caution. This makes sense given the culmen measurement is included in the total head measurement. Wing and culmen are also positively correlated, but some positive correlation should be expected. Larger birds will have larger measurements across the board. 
+
+
+
+
+
+It may be helpful to look at density or histograms of measurements between sexes to examine general trends. These can help inform what variables may preform best in the lda.
+
+```{r eval=FALSE}
+library(ggplot2)
+
+ggplot(all.rekn,aes(x=Culmen, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+ggplot(all.rekn,aes(x=TotalHead, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+ggplot(all.rekn,aes(x=TarsusDiagonal, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+ggplot(all.rekn,aes(x=Wing, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+
+```
+
+
+```{r echo=FALSE, fig.align='center', fig.cap = cap}
+library(ggplot2)
+
+p1 <- ggplot(all.rekn,aes(x=Culmen, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+p2 <- ggplot(all.rekn,aes(x=TotalHead, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+p3 <- ggplot(all.rekn,aes(x=TarsusDiagonal, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+p4 <- ggplot(all.rekn,aes(x=Wing, fill=CHDSex)) + geom_density(alpha=0.25, adjust = 2.5)
+multiplot(p1, p2, p3, p4, cols = 2)
+cap <- "Fiure 2. Density plots of each sexes measurements. Culmen, total head, and wing are the only measurments that show much difference between the two sexes."
+```
+<br/><br/>
+Box-plots seem to be the tool of choice when displaying these data for publication, so they are included here. These show the same results as the density graphs above.
+
+```{r eval=FALSE}
+
+library(ggplot2)
+
+ggplot(all.rekn,aes(y=Culmen, x=CHDSex, fill=CHDSex)) +
+      geom_boxplot(alpha=0.25) + 
+      scale_fill_grey() + 
+      labs(x=element_blank(), y="Culmen (mm)") +
+      theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+ggplot(all.rekn,aes(y=TotalHead, x=CHDSex, fill=CHDSex)) +
+      geom_boxplot(alpha=0.25) + 
+      scale_fill_grey() +
+      labs(x="Sex", y="Total Head (mm)") +
+      theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+ggplot(all.rekn,aes(y=TarsusDiagonal, x=CHDSex, fill=CHDSex)) + 
+      geom_boxplot(alpha=0.25) + 
+      scale_fill_grey() +
+      labs(x=element_blank(),y="Tarsus (mm)") +
+      theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+ggplot(all.rekn,aes(y=Wing, x=CHDSex, fill=CHDSex)) +
+      geom_boxplot(alpha=0.25) +
+      scale_fill_grey() +
+      labs(x="Sex", y="Wing (mm)") +
+      theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+```
+
+
+```{r echo=FALSE, fig.align='center', fig.cap = cap}
+p1all.rekn <- ggplot(all.rekn,aes(y=Culmen, x=CHDSex, fill=CHDSex)) +
+                                            geom_boxplot(alpha=0.25) + 
+                                            scale_fill_grey() + 
+                                            labs(x=element_blank(), y="Culmen (mm)") +
+                                            theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+p2all.rekn <- ggplot(all.rekn,aes(y=TotalHead, x=CHDSex, fill=CHDSex)) +
+                                            geom_boxplot(alpha=0.25) + 
+                                            scale_fill_grey() +
+                                            labs(x="Sex", y="Total Head (mm)") +
+                                            theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+p3all.rekn <- ggplot(all.rekn,aes(y=TarsusDiagonal, x=CHDSex, fill=CHDSex)) + 
+                                            geom_boxplot(alpha=0.25) + 
+                                            scale_fill_grey() +
+                                            labs(x=element_blank(),y="Tarsus (mm)") +
+                                            theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+p4all.rekn <- ggplot(all.rekn,aes(y=Wing, x=CHDSex, fill=CHDSex)) +
+                                            geom_boxplot(alpha=0.25) +
+                                            scale_fill_grey() +
+                                            labs(x="Sex", y="Wing (mm)") +
+                                            theme(panel.background = element_blank(), axis.line = element_line("black"), legend.position = "none")
+multiplot(p1all.rekn, p2all.rekn, p3all.rekn, p4all.rekn, cols = 2)
+
+cap <- "Figure 3. Box-plots depicting the same thing as the density plots earlier. Culmen, total head, and wing are the only measurments that show much difference between the two sexes."
+```
+
+<br/><br/>
+
+These graphs show slight differences in average culmen, total head, and wing, with females being larger than males. There is no real separation between sexes in tarsus, and is likely a poor predictor of sex.
+
+<br/><br/>
+
+LDA can be used with non-normal data, but it preforms better when multinormality is present, especially for classifying unknowns. It might be okay to assume this with large sample sizes and morphometric measurements. The following quantile-quantile plots draw each variable against a normal distribution, and can be used to visually inspect for normality.
+
+```{r eval=FALSE, message=FALSE}
+library(ggpubr)
+
+#filter groups
+all.rekn.m <- all.rekn %>% filter(CHDSex == "M") %>% droplevels
+all.rekn.f <- all.rekn %>% filter(CHDSex == "F") %>% droplevels
+
+ggqqplot(all.rekn.m$Culmen)
+ggqqplot(all.rekn.m$TotalHead)
+ggqqplot(all.rekn.m$TarsusDiagonal)
+ggqqplot(all.rekn.m$Wing)
+
+ggqqplot(all.rekn.f$Culmen)
+ggqqplot(all.rekn.f$TotalHead)
+ggqqplot(all.rekn.f$TarsusDiagonal)
+ggqqplot(all.rekn.f$Wing)
+```
+
+
+```{r echo=FALSE, message=FALSE, fig.align='center', fig.cap = cap}
+library(ggpubr)
+#filter groups
+all.rekn.m <- all.rekn %>% filter(CHDSex == "M") %>% droplevels
+all.rekn.f <- all.rekn %>% filter(CHDSex == "F") %>% droplevels
+
+nm1 <- ggqqplot(all.rekn.m$Culmen)
+nm2 <- ggqqplot(all.rekn.m$TotalHead)
+nm3 <- ggqqplot(all.rekn.m$TarsusDiagonal)
+nm4 <- ggqqplot(all.rekn.m$Wing)
+
+multiplot(nm1, nm2, nm3, nm4, cols = 2)
+cap <- "Figure 4. Q-Q plots for all male measurements (Culmen, ToalHead, TarsusDiagonal, and Wing) seeming resonably normal."
+
+```
+
+
+```{r echo=FALSE, message=FALSE, fig.align='center', fig.cap = cap}
+nf1 <- ggqqplot(all.rekn.f$Culmen)
+nf2 <- ggqqplot(all.rekn.f$TotalHead)
+nf3 <- ggqqplot(all.rekn.f$TarsusDiagonal)
+nf4 <- ggqqplot(all.rekn.f$Wing)
+
+multiplot(nf1, nf2, nf3, nf4, cols = 2)
+
+cap <- "Figure 5. Q-Q plots for all female measurements (Culmen, ToalHead, TarsusDiagonal, and Wing) seeming resonably normal."
+```
+<br/><br/>
+
+Some researchers suggest examining data for multidimensional (Mahalanobis) outliers, and removing them. A LDA is very susceptible to outliers, so it should be worth investigating. I do not think this step is necessary with this REKN data set, but it could be something to experiment with in other cases. I will include this step just for future projects and repeatability. This code to remove 1% of the data's multidimensional outliers. This arbitrary % cutoff seems bizarre to me, but appears to be acceptable in the literature.
+
+```{r}
+percentage.to.remove <- 1 # Remove % of points
+number.to.remove <- trunc(nrow(all.rekn) * percentage.to.remove / 100)
+
+#Look for outliers using all measurements
+m.dist <- mahalanobis(all.rekn[, 2:5], colMeans(all.rekn[, 2:5]), cov(all.rekn[, 2:5]))
+m.dist.order <- order(m.dist, decreasing=TRUE)
+rows.to.keep.index <- m.dist.order[(number.to.remove+1):nrow(all.rekn[, 2:5])]
+#remove the top 2% of outliers
+all.rekn.outliers.out <- all.rekn[rows.to.keep.index,]
+
+```
+
+LDA assumes homogeneity of the variance–covariance matrices. Testing for this can be done using boxM in package "heplots". These data align with that assumption with a p-value >0.05.
+
+```{r, message=FALSE}
+library(heplots)
+boxM(all.rekn[2:5],all.rekn$CHDSex)
+```
+
+
+### Find the Best Model
+
+***
+
+Next, we can run LDA models with different variable combinations to see which is the best predictor of sex. Step-wise variable removal is not suggested as a good method to test model accuracy according to Dechaume-Moncharmont 2011, and examining model from a biological perspective is the suggested method here. However, many people still do this, so I outlined the stepwise procedure first.
+
+```{r, message=FALSE}
+library(klaR)
+modelstepL <- stepclass(CHDSex ~ ., "lda", direction = "both", data = all.rekn, improvement = 0.001, fold = 189)
+
+modelstepL
+```
+
+This stepwise procedure selects Total Head and Wing with a correctness rate of 84.66%, and the two highly correlated variables were not included here. This output makes sense to me biologically.
+
+The non-stepwise procedure involves picking the features that biologically make sense. By using CV=TRUE, we are using the leave-one-out cross-validation method to determine a models predictive accuracy. One individual is removed from the data, the a LDA is calculated with the remaining individuals. This $n-1$ model is then used to predict the sex of removed individual. This is repeated for each individual in the data set. These models do not over-estimate accuracy like the resubstitution method, as each individuals measurements are not included the model to predict itself. This is the preferred method for testing accuracy over of sample-splitting and resubstitution and can be done using lda() from package "MASS"
+
+```{r message=FALSE}
+library(MASS)
+
+#lda using all variables
+jacknife1 <- lda(CHDSex~.,data = all.rekn, CV = TRUE)
+#lda using culmen, wing, and tarsus
+jacknife2 <- lda(CHDSex~ Culmen + Wing + TarsusDiagonal, data = all.rekn, CV = TRUE)
+#lda using culmen, wing, and total head
+jacknife3 <- lda(CHDSex~ TotalHead + Wing + TarsusDiagonal, data = all.rekn, CV = TRUE)
+#lda using total head and wing
+jacknife4 <- lda(CHDSex~ TotalHead + Wing, data = all.rekn, CV = TRUE)
+#lda using culmen and wing
+jacknife5 <- lda(CHDSex~ Culmen + Wing, data = all.rekn, CV = TRUE)
+
+```
+
+
+Each model incorporates different morphometric variables. Biologically, we can start to eliminate some combinations. We know models using total head and culmen are not ideal since these values are highly correlated, so we should steer away from them. We know tarsus is likely a poor predictor of sex, but this doesn't necessarily mean it should be excluded from the models. Of these possible combinations, which accurately predicted the sex of known sexed individuals? Total Head + Wing? Culmen + Wing? Total Head + Wing + Tarsus? Culmen + Wing + Tarsus? Once the models have been run, a table for each models predicted sex and known sex needs to be set up to be run in a confusion matrix.
+```{r}
+
+jacknife1.acc <- table(all.rekn$CHDSex, 
+                       jacknife1$class, dnn = c("Actual Group", "Predicted Group"))
+jacknife2.acc <- table(all.rekn$CHDSex, 
+                       jacknife2$class, dnn = c("Actual Group", "Predicted Group"))
+jacknife3.acc <- table(all.rekn$CHDSex, 
+                       jacknife3$class, dnn = c("Actual Group", "Predicted Group"))
+jacknife4.acc <- table(all.rekn$CHDSex, 
+                       jacknife4$class, dnn = c("Actual Group", "Predicted Group"))
+jacknife5.acc <- table(all.rekn$CHDSex, 
+                       jacknife5$class, dnn = c("Actual Group", "Predicted Group"))
+
+```
+
+Next, use package "caret" to view the how accurate each model was with confusionmatric().
+
+```{r eval=FALSE, message=FALSE}
+library(caret)
+
+caret::confusionMatrix(jacknife1.acc)
+caret::confusionMatrix(jacknife2.acc)
+caret::confusionMatrix(jacknife3.acc)
+caret::confusionMatrix(jacknife4.acc)
+caret::confusionMatrix(jacknife5.acc)
+
+```
+
+```{r echo=FALSE, message=FALSE}
+library(caret)
+
+cm1 <- caret::confusionMatrix(jacknife1.acc)
+cm2 <- caret::confusionMatrix(jacknife2.acc)
+cm3 <- caret::confusionMatrix(jacknife3.acc)
+cm4 <- caret::confusionMatrix(jacknife4.acc)
+cm5 <- caret::confusionMatrix(jacknife5.acc)
+```
+
+A quick scan through the outputs shows that jacknife3 (total head, wing, and tarsus) predicted sex better than the other models, but a very close second was total head and wing (the model chosen through the stepwise procedure)
+
+```{r}
+#Total head, wing, and tarsus
+cm3
+```
+
+```{r}
+#Total head, wing
+cm4
+```
+
+Given the lack of separation between male and female tarsus, the additional accuracy from including tarsus in the model might be a result of random chance. Biologically, I think it makes more sense to omit tarsus from the model and use model 4, the same one selected through the step-wise model selection - total head and wing.
+
+The table output revels the total head and wing model correctly classified `r cm4$table[1,1]` females and incorrectly classified `r cm4$table[2,1]` females as males, and correctly classified `r cm4$table[2,2]` males and incorrectly classified `r cm4$table[1,2]` males as females.
+
+```{r}
+cm4$table
+```
+
+This resulted in accurately classifying 84.57% of individuals with 95% CI (78.6%, 89.42%)
+
+```{r}
+print(cm4$overall)
+```
+
+Now that the best variables have been selected -- through the step-wise selection and cross-validated verification, we can go back to see what the model actually looks like. We can go back to our original lda() function using package "MASS" and run it without the CV=TRUE clause and the variables we just identified as being the best predictors (total head and wing) and run it with the entire data set.
+
+```{r}
+#run the lda with Total Head, Wing, and Tarsus as variables
+lda4 <- lda(CHDSex~ TotalHead + Wing, data = all.rekn)
+
+lda4
+```
+
+Extracting the Coefficients of Linear Discriminates from this lda provide the following formula. This formula is what could be used to calculate your individual LD1 values in the field and assign a field sex.  
+
+<br/><br/>
+
+<center> $-0.1090693 Wing - 0.4617501 Total Head$ </center>  
+
+<br/><br/>
+
+We then use this model to predict the sexes of the known sexed birds. This allows us to visualize the results of the predictions.
+
+```{r fig.align='center'}
+
+predict4 <- predict(lda4, newdata = all.rekn)
+
+predict4.df <- data.frame(type = all.rekn[,1], lda = predict4$x)
+
+```
+
+We can then plot the LD1 values for each individual. If an individuals LD1 values are larger, there is a higher probability the individual is male, and if an individuals LD1 values are small, there is a higher probability the individual is female. Sex is assigned when probability of group membership is > 0.5. If higher classification accuracies are required, and unknown sex is okay, you can fit a curve to the probability of group membership and only classify sex of individuals with higher probabilities of being that particular sex. For example, only classify birds that have >0.8 probabilty of group memberhsip, and birds <0.8 and >0.5 are left as "unknowns". This requires finding the LD1 value that corresponds to those more restrictive probabilities.
+
+
+```{r, fig.align='center'}
+ggplot(predict4.df, aes(LD1, fill = type)) +
+  geom_histogram( alpha = .5, position = "identity", binwidth = .2) 
+```
+
+### Increasing accuracey
+
+***
+
+We can fit a curve to the probabilty of group membership to calculate new LD1 values that correspond to probabilities >0.5. Here we use 0.8 to seleect birds that have a higher probability of being each sex. 
+
+```{r}
+df.resub4.g <- data.frame(all.rekn, predict4$x, predict4$posterior)
+
+names(df.resub4.g)[names(df.resub4.g) == "F"] <- "Prob.F"
+
+df.resub4.g$Prob.Fe <- df.resub4.g$Prob.F + rnorm(length(df.resub4.g$Prob.F), sd = 0.000000005)
+
+fitmodel <- nls( Prob.Fe ~ a/(1 + exp(b * (LD1 + c))), data = df.resub4.g, start=list(a = 1,b = 1.5,c = 0.1))
+
+coef(fitmodel)
+
+
+x <- seq(-4,4,.001)
+y <- (1 / (1 + exp(1.699207 * (x + 0.7798151))))
+      
+testdf <- as.data.frame(cbind(x,y))
+      
+
+cutoffF <- df.resub4.g %>% filter(Prob.F > 0.8)
+cutoffM <- df.resub4.g %>% filter(Prob.F < 0.2)
+```
+
+This formula gives us the ability to calculate the probability of group membership based on LD1 values. From this we can see restricint the probability of group membership to 0.8 creates new LD1 cutoff values at <-1.6 for Females and >0.035 for males. Values >-1.6 and < 0.035 are left unclassified.
+
+<br/><br/>
+
+<center> $1 / (1 + exp(1.699207 * (x + 0.7798151)))$ </center>  
+
+<br/><br/>
+
+Graph the fitted line and where males and females fall for probability of being female. These more restrictive probabilities correctly sexed 95% of females ($n = 19$) and 90.3% of males ($n = 93$). This left 37.8% ($n = 75$) unclassified.
+
+```{r, fig.align='center'}
+ggplot() +
+  geom_point(data = df.resub4.g, aes(x=LD1, y=Prob.F, shape = CHDSex, color = CHDSex), size = 3) +
+  scale_color_manual(values=c('#A0A0A0','#303030'), labels = c("Known Female (n = 62)", "Known Male (n = 136)")) +
+  scale_shape_manual(values=c(16, 17), labels = c("Known Female (n = 62)", "Known Male (n = 136)")) +
+  geom_line(data = testdf, aes(x=x, y=y)) +
+  labs(x="Descrimintate Score", y="Probability of being female") +
+  theme(panel.background = element_blank(), 
+        axis.line = element_line("black"), 
+        legend.position = c(.75,.8), 
+        legend.title=element_blank()) +
+  geom_segment(aes(x = -4.05, y = .8, xend = -1.6, yend = 0.8)) +
+  geom_segment(aes(x = -4.05, y = .5, xend = -0.78, yend = 0.5)) +
+  geom_segment(aes(x = -4.05, y = .2, xend = 0.035, yend = 0.2)) +
+  geom_segment(aes(x = -1.6, y = 0.8, xend = -1.6, yend = -0.05), arrow = arrow(type = "closed", angle = 20, length = unit(.1,"inches"))) +
+  geom_segment(aes(x = -0.78, y = 0.5, xend = -0.78, yend = -0.05), arrow = arrow(type = "closed", angle = 20, length = unit(.1,"inches"))) +
+  geom_segment(aes(x = 0.035, y = 0.2, xend = 0.035, yend = -0.05), arrow = arrow(type = "closed", angle = 20, length = unit(.1,"inches"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(-0.05, 1.05)) +
+  scale_x_continuous(expand = c(0, 0), limits = c(-4.05, 4.05))
+```
+
+
+Replotting LD1 values with the new cutoff scores.
+
+```{r, fig.align='center'}
+ggplot(predict4.df, aes(LD1, fill = type)) +
+  geom_histogram( alpha = .5, position = "identity", binwidth = .2) +
+  geom_vline(xintercept = -1.6, linetype="dashed") +
+  geom_vline(xintercept = .035, linetype="dashed") 
+```

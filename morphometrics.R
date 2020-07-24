@@ -496,6 +496,11 @@ caret::confusionMatrix(df.jacknife2GH.acc)
 caret::confusionMatrix(df.jacknife3GH.acc)
 caret::confusionMatrix(df.jacknife4GH.acc)
 
+
+
+
+
+
 #known sex predict breeding site################################################################################
 #select males from GH
 dfGHM <- dfGH %>% filter(CHDSex == "M") %>% droplevels

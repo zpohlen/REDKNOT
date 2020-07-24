@@ -1,6 +1,7 @@
 library(PerformanceAnalytics)
 library(magrittr)
 library(dplyr)
+library(ggplot2)
 rm(list = ls())
 
 ####Chick Growth plot by year############################################################################################################################
@@ -16,16 +17,16 @@ rm(list = ls())
 #cg2017 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_ChickGrowth_2017.csv")
 #cg2018 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_ChickGrowth_2018.csv")
 
-band2010 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_Banding_2010.csv")
-band2011 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_Banding_2011.csv")
-band2012 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_Banding_2012.csv")
-band2013 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_Banding_2013.csv")
-band2014 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_Banding_2014.csv")
-band2015 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_Banding_2015.csv")
-band2016 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_Banding_2016.csv")
-band2017 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_Banding_2017.csv")
-band2018 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_Banding_2018.csv")
-band2019 <- read.csv("T:/Landbirds/Red_Knot/Breeding/Data/R7MBMlb_REKN_Banding_2019.csv")
+band2010 <- read.csv("R7MBMlb_REKN_Banding_2010.csv")
+band2011 <- read.csv("R7MBMlb_REKN_Banding_2011.csv")
+band2012 <- read.csv("R7MBMlb_REKN_Banding_2012.csv")
+band2013 <- read.csv("R7MBMlb_REKN_Banding_2013.csv")
+band2014 <- read.csv("R7MBMlb_REKN_Banding_2014.csv")
+band2015 <- read.csv("R7MBMlb_REKN_Banding_2015.csv")
+band2016 <- read.csv("R7MBMlb_REKN_Banding_2016.csv")
+band2017 <- read.csv("R7MBMlb_REKN_Banding_2017.csv")
+band2018 <- read.csv("R7MBMlb_REKN_Banding_2018.csv")
+band2019 <- read.csv("R7MBMlb_REKN_Banding_2019.csv")
 
 data.allband <- rbind(band2010, band2011, band2012, band2013, band2014,  band2015, band2016, band2017, band2018, band2019)
 
@@ -35,6 +36,16 @@ data.allband$AgeID <- as.factor(data.allband$AgeID)
 
 data.juv <- as.data.frame(data.allband %>%
   filter(data.allband$AgeID == "L" | data.allband$AgeID == "HY"))
+
+data.catch <- as.data.frame(data.juv %>%
+                              filter(data.juv$AgeID == "L"))
+
+ggplot(data.catch, aes(x = ChickAge)) +
+         geom_histogram(binwidth = 1, col = "darkgray") +
+          theme_bw() +
+  xlab("Chick Age") +
+  ylab("Number of Chicks Caught")
+
 
 nls.Gompertz.growth.fit = nls(Weight ~ A*exp(-exp(-K*(ChickAge-T))), data.juv, start=list(A=90, T=10, K=0.2))
 #A	=	coef(nls.Gompertz.growth.fit)[1]
