@@ -499,6 +499,21 @@ jacknife8 <- lda(CHDSex~ TarsusDiagonal, data = all.rekn, CV = TRUE)
 jacknife9 <- lda(CHDSex~ TotalHead, data = all.rekn, CV = TRUE)
 jacknife10 <- lda(CHDSex~ Wing, data = all.rekn, CV = TRUE)
 jacknife11 <- lda(CHDSex~ Culmen, data = all.rekn, CV = TRUE)
+jacknife12 <- lda(CHDSex~ TarsusDiagonal, data = all.rekn, CV = TRUE)
+
+##cross-validated accuracey for LDA using different biologically relevent variable combinations for ONLY GRAYS HARBOR (UNBIASED)
+GHjacknife1 <- lda(CHDSex~.,data = dfGH, CV = TRUE)
+GHjacknife2 <- lda(CHDSex~ Culmen + Wing + TarsusDiagonal, data = dfGH, CV = TRUE)
+GHjacknife3 <- lda(CHDSex~ TotalHead + Wing + TarsusDiagonal, data = dfGH, CV = TRUE)
+GHjacknife4 <- lda(CHDSex~ TotalHead + Wing, data = dfGH, CV = TRUE)
+GHjacknife5 <- lda(CHDSex~ TotalHead + TarsusDiagonal, data = dfGH, CV = TRUE)
+GHjacknife6 <- lda(CHDSex~ Culmen + TarsusDiagonal, data = dfGH, CV = TRUE)
+GHjacknife7 <- lda(CHDSex~ TarsusDiagonal + Wing, data = dfGH, CV = TRUE)
+GHjacknife8 <- lda(CHDSex~ TarsusDiagonal, data = dfGH, CV = TRUE)
+GHjacknife9 <- lda(CHDSex~ TotalHead, data = dfGH, CV = TRUE)
+GHjacknife10 <- lda(CHDSex~ Wing, data = dfGH, CV = TRUE)
+GHjacknife11 <- lda(CHDSex~ Culmen, data = dfGH, CV = TRUE)
+GHjacknife12 <- lda(CHDSex~ TarsusDiagonal, data = dfGH, CV = TRUE)
 
 ##format lda outputs as confusion matrix
 jacknife1.acc <- table(all.rekn$CHDSex, 
@@ -534,6 +549,47 @@ jacknife10.acc <- table(all.rekn$CHDSex,
 jacknife11.acc <- table(all.rekn$CHDSex, 
                        jacknife11$class,
                        dnn = c("Actual Group", "Predicted Group"))
+jacknife12.acc <- table(all.rekn$CHDSex, 
+                        jacknife12$class,
+                        dnn = c("Actual Group", "Predicted Group"))
+
+##format lda outputs as confusion matrix for ONLY GRAYS HARBOR
+GHjacknife1.acc <- table(dfGH$CHDSex, 
+                       GHjacknife1$class,
+                       dnn = c("Actual Group", "Predicted Group"))
+GHjacknife2.acc <- table(dfGH$CHDSex, 
+                       GHjacknife2$class, 
+                       dnn = c("Actual Group", "Predicted Group"))
+GHjacknife3.acc <- table(dfGH$CHDSex, 
+                       GHjacknife3$class, 
+                       dnn = c("Actual Group", "Predicted Group"))
+GHjacknife4.acc <- table(dfGH$CHDSex, 
+                       GHjacknife4$class,
+                       dnn = c("Actual Group", "Predicted Group"))
+GHjacknife5.acc <- table(dfGH$CHDSex, 
+                       GHjacknife5$class,
+                       dnn = c("Actual Group", "Predicted Group"))
+GHjacknife6.acc <- table(dfGH$CHDSex, 
+                       GHjacknife6$class,
+                       dnn = c("Actual Group", "Predicted Group"))
+GHjacknife7.acc <- table(dfGH$CHDSex, 
+                       GHjacknife7$class,
+                       dnn = c("Actual Group", "Predicted Group"))
+GHjacknife8.acc <- table(dfGH$CHDSex, 
+                       GHjacknife8$class,
+                       dnn = c("Actual Group", "Predicted Group"))
+GHjacknife9.acc <- table(dfGH$CHDSex, 
+                       GHjacknife9$class,
+                       dnn = c("Actual Group", "Predicted Group"))
+GHjacknife10.acc <- table(dfGH$CHDSex, 
+                        GHjacknife10$class,
+                        dnn = c("Actual Group", "Predicted Group"))
+GHjacknife11.acc <- table(dfGH$CHDSex, 
+                        GHjacknife11$class,
+                        dnn = c("Actual Group", "Predicted Group"))
+GHjacknife12.acc <- table(dfGH$CHDSex, 
+                        GHjacknife12$class,
+                        dnn = c("Actual Group", "Predicted Group"))
 
 ##evaluate accuracey of each LDA model 
 library(caret)
@@ -560,7 +616,34 @@ cm10 <- caret::confusionMatrix(jacknife10.acc)
 cm10
 cm11 <- caret::confusionMatrix(jacknife11.acc)
 cm11
+cm12 <- caret::confusionMatrix(jacknife12.acc)
+cm12
 
+
+GHcm1 <- caret::confusionMatrix(GHjacknife1.acc)
+GHcm1
+GHcm2 <- caret::confusionMatrix(GHjacknife2.acc)
+GHcm2
+GHcm3 <- caret::confusionMatrix(GHjacknife3.acc)
+GHcm3
+GHcm4 <- caret::confusionMatrix(GHjacknife4.acc)
+GHcm4
+GHcm5 <- caret::confusionMatrix(GHjacknife5.acc)
+GHcm5
+GHcm6 <- caret::confusionMatrix(GHjacknife6.acc)
+GHcm6
+GHcm7 <- caret::confusionMatrix(GHjacknife7.acc)
+GHcm7
+GHcm8 <- caret::confusionMatrix(GHjacknife8.acc)
+GHcm8
+GHcm9 <- caret::confusionMatrix(GHjacknife9.acc)
+GHcm9
+GHcm10 <- caret::confusionMatrix(GHjacknife10.acc)
+GHcm10
+GHcm11 <- caret::confusionMatrix(GHjacknife11.acc)
+GHcm11
+GHcm12 <- caret::confusionMatrix(GHjacknife12.acc)
+GHcm12
 ##the most accurate model was Total Head and Wing (cm4) with a classification accuracy of 85.86%
 cm4
 cm4$table
@@ -587,15 +670,27 @@ coef(fitmodel)
 x <- seq(-4,4,.001)
 y <- (coef(fitmodel)[1] / (1 + exp(coef(fitmodel)[2] * (x + coef(fitmodel)[3]))))
 
-##solve for y in input LD1 (x) value with 80% probability female (0.8)
-z1 <- (log((coef(fitmodel)[1]/0.8)-1)/coef(fitmodel)[2])-coef(fitmodel)[3]
+##solve for y in input LD1 (x) value with 70% probability female (0.7)
+z1 <- (log((coef(fitmodel)[1]/0.7)-1)/coef(fitmodel)[2])-coef(fitmodel)[3]
+##solve for y in input LD1 (x) value with 70% probability male (30% female, 0.3)
+z2 <- (log((coef(fitmodel)[1]/0.3)-1)/coef(fitmodel)[2])-coef(fitmodel)[3]
 ##solve for y in input LD1 (x) value with 80% probability male (20% female, 0.2)
-z2 <- (log((coef(fitmodel)[1]/0.2)-1)/coef(fitmodel)[2])-coef(fitmodel)[3]
+z3 <- (log((coef(fitmodel)[1]/0.5)-1)/coef(fitmodel)[2])-coef(fitmodel)[3]
 
 testdf <- as.data.frame(cbind(x,y))
       
-cutoffF <- lda.results %>% filter(Prob.F > 0.8)
-cutoffM <- lda.results %>% filter(Prob.F < 0.2)
+cutoffF <- lda.results %>% filter(Prob.F > 0.7)
+cutoffM <- lda.results %>% filter(Prob.F < 0.3)
+
+
+nrow(filter(cutoffF, CHDSex == "F")) / nrow(cutoffF)
+nrow(filter(cutoffM, CHDSex == "M")) / nrow(cutoffM)
+
+#number of birds NOT classified
+nrow(lda.results) - (nrow(cutoffF) + nrow(cutoffM))
+
+#% of birds not classified
+(nrow(lda.results) - (nrow(cutoffF) + nrow(cutoffM))) / nrow(lda.results) 
 
 ##plot a graph of the probability of being female by discriminate score with restricted classification cutoff scores
 ggplot() +
@@ -603,18 +698,18 @@ ggplot() +
   scale_color_manual(values=c('#A0A0A0','#303030'), labels = c("Known Female (n = 62)", "Known Male (n = 136)")) +
   scale_shape_manual(values=c(16, 17), labels = c("Known Female (n = 62)", "Known Male (n = 136)")) +
   geom_line(data = testdf, aes(x=x, y=y)) +
-  labs(x="Descrimintate Score", y="Probability of being female") +
+  labs(x="Descriminant Score", y="Probability of being female") +
   theme(panel.background = element_blank(), 
         axis.line = element_line("black"), 
         legend.position = c(.75,.8), 
         legend.title=element_blank()) +
-  geom_segment(aes(x = -4.05, y = .8, xend = z1, yend = 0.8)) +
+  geom_segment(aes(x = -4.05, y = .7, xend = z1, yend = 0.7)) +
   geom_segment(aes(x = -4.05, y = .5, xend = -0.78, yend = 0.5)) +
-  geom_segment(aes(x = -4.05, y = .2, xend = z2, yend = 0.2)) +
-  geom_segment(aes(x = z1, y = 0.8, xend = z1, yend = -0.05), arrow = arrow(type = "closed", angle = 20, length = unit(.1,"inches"))) +
+  geom_segment(aes(x = -4.05, y = .3, xend = z2, yend = 0.3)) +
+  geom_segment(aes(x = z1, y = 0.7, xend = z1, yend = -0.05), arrow = arrow(type = "closed", angle = 20, length = unit(.1,"inches"))) +
   geom_segment(aes(x = -0.78, y = 0.5, xend = -0.78, yend = -0.05), arrow = arrow(type = "closed", angle = 20, length = unit(.1,"inches"))) +
-  geom_segment(aes(x = z2, y = 0.2, xend = z2, yend = -0.05), arrow = arrow(type = "closed", angle = 20, length = unit(.1,"inches"))) +
-  scale_y_continuous(expand = c(0, 0), limits = c(-0.05, 1.05)) +
+  geom_segment(aes(x = z2, y = 0.3, xend = z2, yend = -0.05), arrow = arrow(type = "closed", angle = 20, length = unit(.1,"inches"))) +
+  scale_y_continuous(expand = c(0, 0), limits = c(-0.05, 1.05), breaks = c(0, 0.3, .5, .7, 1)) +
   scale_x_continuous(expand = c(0, 0), limits = c(-4.05, 4.05))
 
 
